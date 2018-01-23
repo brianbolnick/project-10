@@ -1,4 +1,4 @@
-# Project Group 10 - Name TBD
+# Project Group 10 - "Sell Out"
 
 ## Setup and Getting Started
 1. Ensure PHP and all other dependencies are installed on your machine. You should also have a git command line tool or desktop application installed.
