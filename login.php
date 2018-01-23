@@ -15,8 +15,26 @@
     </head>
     <body>       
         <?php include("header.php"); ?>
-        <div class="container home-container"  >
-            <h1 class="home-title">Log In or Sign Up</h1>     
+        <div class="container login-container"  >
+            <div class="login-form-container">
+                <h1>Sign Up</h1>
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                    </div>
+                    <button type="submit" class="btn btn-outline-dark" style="margin-top: 10px;" >Submit</button>
+                </form>
+            </div>    
         </div>
     </body>
     <?php include("footer.php"); ?>
