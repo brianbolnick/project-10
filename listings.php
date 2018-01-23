@@ -13,7 +13,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
     </head>
-    <body>       
+    <body style="background: #E4E5E7 !important;">       
         <?php include("header.php"); ?>
         <div class="container listings-container"  >
             <h1 class="home-title">Listings</h1>
