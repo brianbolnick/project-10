@@ -1,0 +1,98 @@
+body { 
+    background: url('../img/tags.jpeg');   
+    background-size: cover;
+    background-repeat: no-repeat; 
+    min-height: 100vh;          
+    font-family: 'Lato', sans-serif !important;  
+}
+
+.home-title {
+    font-family: 'Lato', sans-serif !important;
+    font-weight: 300;
+    font-size: 3.5rem;
+    margin-top: 10px;
+}
+
+.home-listing-button {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 1.5rem;
+    margin-top: 30px;
+    font-weight: 300;
+}
+
+.home-container {
+    margin: 0;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+}
+
+img.nav-image {
+    transition: transform 0.7s;
+}
+
+img.nav-image:hover {
+    transition: transform 0.7s;
+	transform: scale(1.05);
+}
+
+.header-link {
+	color: #f5f5f5;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 0.9rem;
+	transition: transform 0.7s;
+	position: relative;
+	display: inline-block;
+	transition: color .2s ease;	
+}
+
+.header-link:hover {
+	color: #f5f5f5;
+	text-decoration: none;
+}
+
+.header-link:hover::after,
+.header-link:hover::before {
+	width: 100%;
+	left: 0;
+}
+
+.header-link::after,
+.header-link::before {
+	content: '';
+	position: absolute;
+	top: calc(100% + 5px);
+	width: 0;
+	right: 0;
+	height: 3px;
+}
+
+.header-link::before {
+	transition: width 0.4s cubic-bezier(0.51, 0.18, 0, 0.88) 0.1s;
+	background: #E4DEC3;
+}
+
+.header-link::after {
+	transition: width 0.2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
+	background: #CDAE9F;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 320px) {
+    .hide-on-mobile {
+        display: none !important;
+    }
+
+    body { 
+        background: url('../img/tags-mobile.jpeg');                       
+    }
+}
+
+@media only screen and (min-width: 767px) {
+    .hide-on-med-and-up {
+        display: none !important;
+    }
+}

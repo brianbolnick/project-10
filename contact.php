@@ -16,14 +16,9 @@
     <body>       
         <?php include("header.php"); ?>
         <div class="container home-container"  >
-            <h1 class="home-title">Classifieds for College Students.</h1>
-            <a href="listings.php">
-                <button type="button" class="btn btn-outline-dark home-listing-button">
-                    <span style="font-size: 2rem; margin-right: 10px;"> Shop Now</span>
-                    <i class="fas fa-arrow-right "></i>
-                </button>
-            </a>            
+            <h1 class="home-title">Contact</h1>     
         </div>
     </body>
     <?php include("footer.php"); ?>
+
 </html>
