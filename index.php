@@ -1,3 +1,4 @@
+<?php $active = 'index'; ?>
 <!doctype html>
 <html>
     <head>

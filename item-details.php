@@ -1,3 +1,4 @@
+<?php $active = 'listings'; ?>
 <!doctype html>
 <html>
     <head>

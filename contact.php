@@ -1,3 +1,4 @@
+<?php $active = 'contact'; ?>
 <!doctype html>
 <html>
     <head>

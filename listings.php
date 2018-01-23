@@ -1,3 +1,4 @@
+<?php $active = 'listings'; ?>
 <!doctype html>
 <html>
     <head>
@@ -16,59 +17,87 @@
     <body style="background: #E4E5E7 !important;">       
         <?php include("header.php"); ?>
         <div class="container listings-container"  >
-            <h1 class="home-title">Listings</h1>
+            <h1 class="home-title" style="letter-spacing: 2px;">LISTINGS</h1>
+            <div class="container" style="max-width: 100% !important">                
+                <div class="row form-row" >
+                    <form class="form-inline">
+                        <div class="form-group mx-sm-3 mb-2 filter-select">
+                            <select class="form-control">
+                                <option>Arts and Entertainment</option>
+                                <option>Sporting Goods</option>
+                                <option>Electronics</option>
+                                <option>Furniture and Home Decor</option>
+                                <option>Pet Supplies</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-outline-dark mb-2">
+                            <span style="letter-spacing: 2px">FILTER</span>
+                            <i class="fas fa-filter"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-sm-12 col-md-6 col-lg-3">
                     <a href="item-details.php">
                         <div class="listing-card" style="background-image: url(https://images.pexels.com/photos/270640/pexels-photo-270640.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb)">                                                            
+                            <div class="listing-card-price">$2</div>
                         </div>
                     </a>
                 </div>                
                 <div class="col-sm-12 col-md-6 col-lg-3">
                     <a href="item-details.php">
                         <div class="listing-card" style="background-image: url(https://images.pexels.com/photos/115558/pexels-photo-115558.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb)">                                                            
+                            <div class="listing-card-price">$15</div>
                         </div>
                     </a>
                 </div>                
                 <div class="col-sm-12 col-md-6 col-lg-3">
                     <a href="item-details.php">
                         <div class="listing-card" style="background-image: url(https://images.pexels.com/photos/247932/pexels-photo-247932.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb)">                                                            
+                            <div class="listing-card-price">$7</div>
                         </div>
                     </a>
                 </div>                
                 <div class="col-sm-12 col-md-6 col-lg-3">
                     <a href="item-details.php">
                         <div class="listing-card" style="background-image: url(https://images.pexels.com/photos/261909/pexels-photo-261909.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb)">                                                            
+                            <div class="listing-card-price">$57</div>
                         </div>
                     </a>
                 </div>                
                 <div class="col-sm-12 col-md-6 col-lg-3">
                     <a href="item-details.php">
                         <div class="listing-card" style="background-image: url(https://images.pexels.com/photos/325876/pexels-photo-325876.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb)">                                                            
+                            <div class="listing-card-price">$22</div>
                         </div>
                     </a>
                 </div>                
                 <div class="col-sm-12 col-md-6 col-lg-3">
                     <a href="item-details.php">
                         <div class="listing-card" style="background-image: url(https://images.pexels.com/photos/704971/pexels-photo-704971.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb)">                                                            
+                            <div class="listing-card-price">$14</div>
                         </div>
                     </a>
                 </div>                
                 <div class="col-sm-12 col-md-6 col-lg-3">
                     <a href="item-details.php">
                         <div class="listing-card" style="background-image: url(https://images.pexels.com/photos/8263/pexels-photo.jpg?h=350&dpr=2&auto=compress&cs=tinysrgb)">                                                            
+                            <div class="listing-card-price">$5</div>
                         </div>
                     </a>
                 </div>                
                 <div class="col-sm-12 col-md-6 col-lg-3">
                     <a href="item-details.php">
                         <div class="listing-card" style="background-image: url(https://images.pexels.com/photos/374631/pexels-photo-374631.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb)">                                                            
+                            <div class="listing-card-price">$92</div>
                         </div>
                     </a>
                 </div>                
                 <div class="col-sm-12 col-md-6 col-lg-3">
                     <a href="item-details.php">
                         <div class="listing-card" style="background-image: url(https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb)">                                                            
+                            <div class="listing-card-price">$17</div>
                         </div>
                     </a>
                 </div>                

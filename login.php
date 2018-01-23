@@ -1,3 +1,4 @@
+<?php $active = 'login'; ?>
 <!doctype html>
 <html>
     <head>

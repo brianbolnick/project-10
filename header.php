@@ -9,16 +9,16 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo03">
         <span class="navbar-text">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item">
+                <?php echo ($active == 'index') ? '<li class="nav-item active">' : '<li class="nav-item">' ?>
                     <a class="nav-link header-link" href="index.php">Home</a>
                 </li>
-                <li class="nav-item">
+                <?php echo ($active == 'listings') ? '<li class="nav-item active">' : '<li class="nav-item">' ?>
                     <a class="nav-link header-link" href="listings.php">For Sale</a>
                 </li>
-                <li class="nav-item">
+                <?php echo ($active == 'contact') ? '<li class="nav-item active">' : '<li class="nav-item">' ?>
                     <a class="nav-link header-link" href="contact.php">Contact</a>
                 </li>
-                <li class="nav-item">
+                <?php echo ($active == 'login') ? '<li class="nav-item active">' : '<li class="nav-item">' ?>
                     <a class="nav-link header-link" href="login.php">Sign Up</a>
                 </li>
             </ul>
