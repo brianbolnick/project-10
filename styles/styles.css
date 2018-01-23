@@ -97,6 +97,30 @@ img.nav-image:hover {
     padding: 30px;
 }
 
+.listings-container {
+    text-align: center;
+    max-width: 100% !important;
+}
+
+.listing-card {
+    margin-bottom: 25px;
+    transition: transform 0.7s;
+    padding: 0 5px;
+}
+
+.listing-card:hover {
+    margin-bottom: 25px;
+    transition: transform 0.7s;
+	transform: scale(1.02);
+}
+
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 0.3rem;
+}
+
 @media only screen and (max-width: 767px) and (min-width: 320px) {
     .hide-on-mobile {
         display: none !important;
