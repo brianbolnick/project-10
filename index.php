@@ -47,7 +47,7 @@
     <body>
     <div class="container" style='height: 100%;'>
         <div style='margin-top: 100px; padding: 5%; text-align: center;'>        
-            <h1>This is our site!</h1>  
+            <h1>Sell Out</h1>  
         </div>
     </div>
         
