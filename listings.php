@@ -1,4 +1,19 @@
-<?php $active = 'listings'; ?>
+<?php
+$active = 'listings';
+require_once  'db_config.php';
+
+$conn = new mysqli($hn, $un, $pw, $db);
+if($conn->connect_error) die($conn->connect_error);
+
+$query = "SELECT * FROM listings";
+
+$result = $conn->query($query); 
+if(!$result) die($conn->error);
+
+$rows = $result->num_rows;
+
+?>
+
 <!doctype html>
 <html>
     <head>
@@ -28,6 +43,11 @@
                                 <option>Electronics</option>
                                 <option>Furniture and Home Decor</option>
                                 <option>Pet Supplies</option>
+                                <option>Music and Instruments</option>
+                                <option>Culinary and Food</option>
+                                <option>Housing and Real Estate</option>
+                                <option>Tools and Hardware</option>
+                                <option>Books</option>
                             </select>
                         </div>
                         <button type="submit" class="btn btn-outline-dark mb-2">
@@ -38,71 +58,22 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-3">
-                    <a href="item-details.php">
-                        <div class="listing-card" style="background-image: url(https://images.pexels.com/photos/270640/pexels-photo-270640.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb)">                                                            
-                            <div class="listing-card-price">$2</div>
-                        </div>
-                    </a>
-                </div>                
-                <div class="col-sm-12 col-md-6 col-lg-3">
-                    <a href="item-details.php">
-                        <div class="listing-card" style="background-image: url(https://images.pexels.com/photos/115558/pexels-photo-115558.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb)">                                                            
-                            <div class="listing-card-price">$15</div>
-                        </div>
-                    </a>
-                </div>                
-                <div class="col-sm-12 col-md-6 col-lg-3">
-                    <a href="item-details.php">
-                        <div class="listing-card" style="background-image: url(https://images.pexels.com/photos/247932/pexels-photo-247932.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb)">                                                            
-                            <div class="listing-card-price">$7</div>
-                        </div>
-                    </a>
-                </div>                
-                <div class="col-sm-12 col-md-6 col-lg-3">
-                    <a href="item-details.php">
-                        <div class="listing-card" style="background-image: url(https://images.pexels.com/photos/261909/pexels-photo-261909.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb)">                                                            
-                            <div class="listing-card-price">$57</div>
-                        </div>
-                    </a>
-                </div>                
-                <div class="col-sm-12 col-md-6 col-lg-3">
-                    <a href="item-details.php">
-                        <div class="listing-card" style="background-image: url(https://images.pexels.com/photos/325876/pexels-photo-325876.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb)">                                                            
-                            <div class="listing-card-price">$22</div>
-                        </div>
-                    </a>
-                </div>                
-                <div class="col-sm-12 col-md-6 col-lg-3">
-                    <a href="item-details.php">
-                        <div class="listing-card" style="background-image: url(https://images.pexels.com/photos/704971/pexels-photo-704971.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb)">                                                            
-                            <div class="listing-card-price">$14</div>
-                        </div>
-                    </a>
-                </div>                
-                <div class="col-sm-12 col-md-6 col-lg-3">
-                    <a href="item-details.php">
-                        <div class="listing-card" style="background-image: url(https://images.pexels.com/photos/8263/pexels-photo.jpg?h=350&dpr=2&auto=compress&cs=tinysrgb)">                                                            
-                            <div class="listing-card-price">$5</div>
-                        </div>
-                    </a>
-                </div>                
-                <div class="col-sm-12 col-md-6 col-lg-3">
-                    <a href="item-details.php">
-                        <div class="listing-card" style="background-image: url(https://images.pexels.com/photos/374631/pexels-photo-374631.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb)">                                                            
-                            <div class="listing-card-price">$92</div>
-                        </div>
-                    </a>
-                </div>                
-                <div class="col-sm-12 col-md-6 col-lg-3">
-                    <a href="item-details.php">
-                        <div class="listing-card" style="background-image: url(https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb)">                                                            
-                            <div class="listing-card-price">$17</div>
-                        </div>
-                    </a>
-                </div>                
-                
-
+<?php
+for($j=0; $j<$rows; $j++)
+{
+$result->data_seek($j); 
+$row = $result->fetch_array(MYSQLI_NUM); 
+echo <<<_END
+<div class="col-sm-12 col-md-6 col-lg-3">
+<a href="item-details.php">
+    <div class="listing-card" style="background-image: url($row[4])">                                                            
+        <div class="listing-card-price">$$row[7]</div>
+    </div>
+</a>
+</div> 
+_END;
+}
+?>
             </div>
         </div>
     </body>
