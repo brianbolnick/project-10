@@ -17,7 +17,35 @@
     <body>       
         <?php include("header.php"); ?>
         <div class="container home-container"  >
-            <h1 class="home-title">Contact</h1>     
+            <h1 class="home-title">Contact</h1>
+			<div class="col-lg-auto col-md-auto col-sm-auto">
+			<form>
+			    <div class="form-group">
+					<label for="contactName">Your Name</label>
+					<input type="text" class="form-control" id="contactName" placeholder="Your name" required>
+				</div>
+				<div class="form-group">
+					<label for="contactEmail">Email address</label>
+					<input type="email" class="form-control" id="contactEmail" placeholder="Enter email" required>
+					<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+				</div>
+				<div class="form-group">
+					<label for="contactIssue">Reason for contact</label>
+					<select class="form-control" id="contactIssue" required>
+						<option>Account Issue</option>
+						<option>General Question</option>
+						<option>Listing Issue</option>
+						<option>Report a Listing/User</option>
+						<option>Other</option>
+					</select>
+				</div>
+				<div class="form-group" required>
+					<label for="contactDetails">Detailed description of issue</label>
+					<textarea class="form-control" rows="3" id="fDescription"></textarea>
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+			</div>
         </div>
     </body>
     <?php include("footer.php"); ?>
