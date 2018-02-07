@@ -30,7 +30,7 @@ $rows = $result->num_rows;
     <body>       
         <?php include("header.php"); ?>
         <div class="container listings-container"  >
-            <h1 class="home-title">Your Personal Profile</h1>
+            <h1 class="home-title">My Account</h1>
 			<div class="container contact-form-container">
 				<form>
                     <div class="form-group row">
@@ -78,7 +78,7 @@ $rows = $result->num_rows;
 			</div>
 		<div class="row">
 		<div class="col">
-			<h1 class="home-title">Your Listings</h1>
+			<h1 class="home-title">My Listings</h1>
 			</div>
 		</div>
 		<div class="row">
