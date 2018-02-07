@@ -8,13 +8,25 @@
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo03">
         <span class="navbar-text">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <ul id="navderek" class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <?php echo ($active == 'index') ? '<li class="nav-item active">' : '<li class="nav-item">' ?>
                     <a class="nav-link header-link" href="index.php">Home</a>
                 </li>
                 <?php echo ($active == 'listings') ? '<li class="nav-item active">' : '<li class="nav-item">' ?>
-                    <a class="nav-link header-link" href="listings.php">For Sale</a>
-                </li>
+                    <a class="nav-link header-link" href="listings.php">Listings</a>
+					<ul>
+						<?php echo ($active == 'addListing') ? '<li class="nav-item active">' : '<li class="nav-item">' ?>
+							<a class="nav-link header-link" href="addListing.php">Add</a>
+						</li>
+						<?php echo ($active == 'editListing') ? '<li class="nav-item active">' : '<li class="nav-item">' ?>
+							<a class="nav-link header-link" href="editListing.php">Edit</a>
+						</li>
+						<?php echo ($active == 'deleteListing') ? '<li class="nav-item active">' : '<li class="nav-item">' ?>
+							<a class="nav-link header-link" href="deleteListing.php">Delete</a>
+						</li>
+					</ul>
+				</li>
+
                 <?php echo ($active == 'contact') ? '<li class="nav-item active">' : '<li class="nav-item">' ?>
                     <a class="nav-link header-link" href="contact.php">Contact</a>
                 </li>
