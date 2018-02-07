@@ -18,7 +18,7 @@
         <?php include("header.php"); ?>
         <div class="container login-container"  >
             <div class="login-form-container">
-                <h1>Log In</h1>
+                <h1>Sign Up</h1>
                 <form>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
