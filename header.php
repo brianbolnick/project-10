@@ -21,9 +21,6 @@
                 <?php echo ($active == 'login') ? '<li class="nav-item active">' : '<li class="nav-item">' ?>
                     <a class="nav-link header-link" href="login.php">Log In</a>
                 </li>
-<?php echo ($active == 'signup') ? '<li class="nav-item active">' : '<li class="nav-item">' ?>
-                    <a class="nav-link header-link" href="signup.php">Sign Up</a>
-                </li>
             </ul>
         </span>
     </div>
