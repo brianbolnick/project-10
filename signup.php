@@ -21,28 +21,28 @@
                 <h1>Sign Up</h1>
                 <form>
 				<div class="form-group">
-                        <label for="exampleInputEmail1">First Name</label>
-                        <input type="name" class="form-control"	placeholder="Enter Name">
+                        <label for="Fname">First Name</label>
+                        <input type="name" class="form-control"id="Fname"placeholder="Enter Name">
                     </div>
 					<div class="form-group">
-                        <label for="exampleInputEmail1">Last Name</label>
-                        <input type="email" class="form-control" placeholder="Enter Last Name">                      
+                        <label for="Lname">Last Name</label>
+                        <input type="name" class="form-control"id="Lname" placeholder="Enter Last Name">                      
                     </div>
 					<div class="form-group">
-                        <label for="exampleInputEmail1">Phone Number</label>
-                        <input type="name" class="form-control"	placeholder="Enter Phone Number">
+                        <label for="PhoneNumber">Phone Number</label>
+                        <input type="text" class="form-control"id="PhoneNumber"	placeholder="Enter Phone Number">
                     </div>
 					<div class="form-group">
-                        <label for="exampleInputEmail1">Current School</label>
-                        <input type="name" class="form-control"	placeholder="Enter Current School">
+                        <label for="CurrentSchool">Current School</label>
+                        <input type="name" class="form-control" id="CurrentSchool"placeholder="Enter Current School">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <label for="signupEmail">Email address</label>
+                        <input type="email" class="form-control" id="signupEmail" aria-describedby="emailHelp" placeholder="Enter email">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" class="form-control" id="signupPassword" placeholder="Password">
                     </div>
                     <button type="submit" class="btn btn-outline-dark" style="margin-top: 10px;" >Register</button>
                 </form>
