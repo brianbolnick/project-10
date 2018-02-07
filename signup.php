@@ -1,4 +1,4 @@
-<?php $active = 'login'; ?>
+<?php $active = 'signup'; ?>
 <!doctype html>
 <html>
     <head>
