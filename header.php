@@ -31,7 +31,7 @@
                     <a class="nav-link header-link" href="contact.php">Contact</a>
                 </li>
                 <?php echo ($active == 'login') ? '<li class="nav-item active">' : '<li class="nav-item">' ?>
-                    <a class="nav-link header-link" href="login.php">Sign Up</a>
+                    <a class="nav-link header-link" href="login.php">Log In</a> / <a <a class="nav-link header-link" href="signup.php">Sign Up</a>
                 </li>
             </ul>
         </span>
