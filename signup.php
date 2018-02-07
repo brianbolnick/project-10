@@ -16,8 +16,8 @@
     </head>
     <body>       
         <?php include("header.php"); ?>
-        <div class="container login-container2"  >
-            <div class="login-form-container2">
+        <div class="container signup-container"  >
+            <div class="signup-form-container">
                 <h1>Sign Up</h1>
                 <form>
 				<div class="form-group">
@@ -27,6 +27,14 @@
 					<div class="form-group">
                         <label for="exampleInputEmail1">Last Name</label>
                         <input type="email" class="form-control" placeholder="Enter Last Name">                      
+                    </div>
+					<div class="form-group">
+                        <label for="exampleInputEmail1">Phone Number</label>
+                        <input type="name" class="form-control"	placeholder="Enter Phone Number">
+                    </div>
+					<div class="form-group">
+                        <label for="exampleInputEmail1">Current School</label>
+                        <input type="name" class="form-control"	placeholder="Enter Current School">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
