@@ -99,6 +99,22 @@ img.nav-image:hover {
     padding: 30px;
 }
 
+.signup-container {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+}
+
+.signup-form-container {
+    height: 400px;
+    background: #f5f5f5;
+    padding: 30px;
+}
+
 .container.contact-container {
     text-align: center;
 }
