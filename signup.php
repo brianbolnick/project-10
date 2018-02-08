@@ -19,7 +19,7 @@
         <div class="container signup-container"  >
             <div class="signup-form-container">
                 <h1>Sign Up</h1>
-                <form>
+                <form method='post' action='signup.php'>
 				<div class="form-group">
                         <label for="Fname">First Name</label>
                         <input type="name" class="form-control"id="Fname"placeholder="Enter Name">

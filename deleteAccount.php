@@ -30,9 +30,10 @@ $rows = $result->num_rows;
     <body>       
         <?php include("header.php"); ?>
         <div class="container listings-container"  >
-            <h1 class="home-title">My Account</h1>
+            <h1 class="home-title">Account Deletion</h1>
 			<div class="container contact-form-container">
-				<form method='post' action='profile.php'>
+				<form>
+					<fieldset disabled>
                     <div class="form-group row">
                         <label for="fName" class="col-lg-3 col-form-label form-control-label">First name</label>
                         <div class="col-lg-9">
@@ -69,21 +70,16 @@ $rows = $result->num_rows;
                             <input class="form-control" type="password" id="password" value="11111122333">
                         </div>
                     </div>
+					</fieldset>
                     <div class="form-group row">
-						<div class="col-lg">
-                            <input type="submit" class="btn btn-primary" value="Save Changes">
-							<div class="float-md-right float-none">
-								<input type="submit" class="btn btn-danger" value="Delete Account">
-							</div>
-						</div>
+                        <div class="col-lg">
+							<p class="text-danger">Deleting your account will remove you from our database, as well as all of your ads listed below.</p>
+                            <input type="submit" class="btn btn-danger" value="Delete Account">
+                        </div>
                     </div>
                 </form>
 			</div>
-		<div class="row">
-		<div class="col">
-			<h1 class="home-title">My Listings</h1>
-			</div>
-		</div>
+		<hr>
 		<div class="row">
 		<?php
 for($j=0; $j<$rows; $j++)
@@ -92,19 +88,12 @@ $result->data_seek($j);
 $row = $result->fetch_array(MYSQLI_NUM); 
 echo <<<_END
 <div class="col-sm-12 col-md-6 col-lg-3">
-	<div class="card mt-3">
-	<div class="card-img-top">
-		<a href="item-details.php">
-			<div class="listing-card" style="background-image: url($row[4])">                                                            
-				<div class="listing-card-price">$$row[7]</div>
-			</div>
-		</a>
-	</div>
-	<div class="card-footer">
-		<a href="editListing.php" class="col-sm-4 btn btn-warning">Edit</a>   <a href="deleteListing.php" class="col-sm-4 btn btn-danger">Delete</a>
-	</div>
-	</div>
-</div>
+<a href="item-details.php">
+    <div class="listing-card" style="background-image: url($row[4])">                                                            
+        <div class="listing-card-price">$$row[7]</div>
+    </div>
+</a>
+</div> 
 _END;
 }
 ?>
