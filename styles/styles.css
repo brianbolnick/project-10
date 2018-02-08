@@ -99,6 +99,32 @@ img.nav-image:hover {
     padding: 30px;
 }
 
+.contact-container {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+}
+
+.contact-seller-container {
+    margin: 0;
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+}
+
+.contact-form-container {
+    background: #f5f5f5;
+    padding: 30px;
+}
+
+
 .signup-container {
     margin: 0;
     position: absolute;
@@ -110,9 +136,9 @@ img.nav-image:hover {
 }
 
 .signup-form-container {
-    height: 400px;
     background: #f5f5f5;
     padding: 30px;
+    text-align: left;
 }
 
 .container.contact-container {
@@ -166,7 +192,7 @@ img.nav-image:hover {
 .add-container {
     margin: 0;
     position: absolute;
-    top: 65%;
+    top: 55%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%); 
@@ -174,9 +200,18 @@ img.nav-image:hover {
 }
 
 .add-form-container {
-    height: 400px;
     background: #f5f5f5;
 	padding: 30px;
+}
+
+.item-container {
+    background: #f5f5f5;
+    padding: 30px;
+    margin-top: 5%;
+}
+
+h1.listing-title {
+    text-align: center;
 }
 
 .del-form-container {
@@ -184,6 +219,12 @@ img.nav-image:hover {
     /*background: #f5f5f5; */
 	padding: 30px;
 	justify-content: space-evenly;
+}
+
+.description-title {
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 #navderek ul{
@@ -198,6 +239,10 @@ img.nav-image:hover {
 #navderek li:hover ul{
     /*left:0;*/
 	display:block;
+}
+
+.sign-up-prompt {
+    margin-top: 10px;
 }
 
 @media only screen and (max-width: 767px) and (min-width: 320px) {
@@ -216,6 +261,16 @@ img.nav-image:hover {
         left: 50%;
         margin-right: -50%;
         transform: translate(-50%, -50%); 
+        text-align: center;
+    }
+
+    .signup-container {
+        margin: 0;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
         text-align: center;
     }
 

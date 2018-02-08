@@ -13,25 +13,14 @@
                     <a class="nav-link header-link" href="index.php">Home</a>
                 </li>
                 <?php echo ($active == 'listings') ? '<li class="nav-item active">' : '<li class="nav-item">' ?>
-                    <a class="nav-link header-link" href="listings.php">Listings</a>
-					<ul>
-						<?php echo ($active == 'addListing') ? '<li class="nav-item active">' : '<li class="nav-item">' ?>
-							<a class="nav-link header-link" href="addListing.php">Add</a>
-						</li>
-						<?php echo ($active == 'editListing') ? '<li class="nav-item active">' : '<li class="nav-item">' ?>
-							<a class="nav-link header-link" href="editListing.php">Edit</a>
-						</li>
-						<?php echo ($active == 'deleteListing') ? '<li class="nav-item active">' : '<li class="nav-item">' ?>
-							<a class="nav-link header-link" href="deleteListing.php">Delete</a>
-						</li>
-					</ul>
+                    <a class="nav-link header-link" href="listings.php">Listings</a>					
 				</li>
 
                 <?php echo ($active == 'contact') ? '<li class="nav-item active">' : '<li class="nav-item">' ?>
                     <a class="nav-link header-link" href="contact.php">Contact</a>
                 </li>
                 <?php echo ($active == 'login') ? '<li class="nav-item active">' : '<li class="nav-item">' ?>
-                    <a class="nav-link header-link" href="login.php">Log In</a> / <a <a class="nav-link header-link" href="signup.php">Sign Up</a>
+                    <a class="nav-link header-link" href="login.php">Log In</a>
                 </li>
             </ul>
         </span>

@@ -16,46 +16,44 @@
     </head>
     <body>       
         <?php include("header.php"); ?>
-		<div class="container home-container"  >
-            <h1 class="home-title">Add Listing</h1>     
-        </div>
         <div class="container add-container"  >
             <div class="add-form-container">
-                <form>
+                <h1 style='text-align:center'>Add Listing</h1>     
+                <form method='post' action='add-listing.php'>
                     <div class="form-group">
                         <label for="InputTitle">Title</label>
-                        <input type="Title" class="form-control" id="InputTitle" placeholder="Title of the post">
+                        <input type="text" class="form-control" id="InputTitle" placeholder="Title" name='title' required>
                     </div>
                     <div class="form-group">
                         <label for="inputDescription">Description</label>
-                        <input type="Description" class="form-control" id="inputDescription" placeholder="Description of the listing">
+                        <input type="text" class="form-control" id="inputDescription" placeholder="Description" name='description' required>
                     </div>
 					<div class="form-group">
                         <label for="inputPrice">Price</label>
-                        <input type="Price" id="inputPrice" placeholder="##.##">
+                        <input type="text" class="form-control"  id="inputPrice" placeholder="Price" name='price' required>
                     </div>
-					<div class="form-group" style="max-width: 100% !important">                
-						<div class="row form-row1" >
-							<form class="form-inline">
-								<div class="form-group mx-sm-3 mb-2">
-								<label for="inputCategory">Category</label>
-									<select>
-										<option>Arts and Entertainment</option>
-										<option>Sporting Goods</option>
-										<option>Electronics</option>
-										<option>Furniture and Home Decor</option>
-										<option>Pet Supplies</option>
-										<option>Music and Instruments</option>
-										<option>Culinary and Food</option>
-										<option>Housing and Real Estate</option>
-										<option>Tools and Hardware</option>
-										<option>Books</option>
-									</select>
-								</div>
-							</form>
-						</div>
+					<div class="form-group">                													
+                        <label for="inputCategory">Category</label>
+                        <select type="category" class="form-control" id="category" name='category' required>
+                            <option>Arts and Entertainment</option>
+                            <option>Sporting Goods</option>
+                            <option>Electronics</option>
+                            <option>Furniture and Home Decor</option>
+                            <option>Pet Supplies</option>
+                            <option>Music and Instruments</option>
+                            <option>Culinary and Food</option>
+                            <option>Housing and Real Estate</option>
+                            <option>Tools and Hardware</option>
+                            <option>Books</option>
+                        </select>
 					</div>
-                    <button type="submit" class="btn btn-outline-dark" style="margin-top: 10px;" onclick="window.location.href='listings.php'">Post Listing</button>
+                    <label for="image-file">Image</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="image-file">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-outline-dark" style="margin-top: 10px;">Post Listing</button>
                 </form>
             </div>    
         </div>
