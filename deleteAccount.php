@@ -32,7 +32,7 @@ $rows = $result->num_rows;
         <div class="container listings-container"  >
             <h1 class="home-title">Account Deletion</h1>
 			<div class="container contact-form-container">
-				<form>
+				<form method='post' action='deleteAccount.php'>
 					<fieldset disabled>
                     <div class="form-group row">
                         <label for="fName" class="col-lg-3 col-form-label form-control-label">First name</label>

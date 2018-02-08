@@ -73,7 +73,7 @@ $rows = $result->num_rows;
 						<div class="col-lg">
                             <input type="submit" class="btn btn-primary" value="Save Changes">
 							<div class="float-md-right float-none">
-								<input type="submit" class="btn btn-danger" value="Delete Account">
+								<a class="btn btn-danger" href="deleteAccount.php">Delete Account</a>
 							</div>
 						</div>
                     </div>
