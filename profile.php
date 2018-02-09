@@ -101,7 +101,7 @@ echo <<<_END
 		</a>
 	</div>
 	<div class="card-footer">
-		<a href="editListing.php" class="col-sm-4 btn btn-warning">Edit</a>   <a href="deleteListing.php" class="col-sm-4 btn btn-danger">Delete</a>
+		<a href="edit-listing.php" class="col-sm-4 btn btn-warning">Edit</a>   <a href="delete-listing.php" class="col-sm-4 btn btn-danger">Delete</a>
 	</div>
 	</div>
 </div>
