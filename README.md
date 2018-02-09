@@ -18,5 +18,5 @@
 7. Filter listings by category 
 8. Contact Seller
 9. View all of your personal listings
-10. Contact SellOut
+10. Search Listings 
 11. View a single listing details 
