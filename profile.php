@@ -1,6 +1,9 @@
 <?php $active = 'listings';
 require_once  'db_config.php';
 
+
+$name = (isset($_POST['first_name'])) ? $_POST['first_name'] : ""; 
+
 $conn = new mysqli($hn, $un, $pw, $db);
 if($conn->connect_error) die($conn->connect_error);
 
@@ -29,6 +32,7 @@ $rows = $result->num_rows;
     </head>
     <body>       
         <?php include("header.php"); ?>
+        <?php echo $name ?>
         <div class="container listings-container"  >
             <h1 class="home-title">My Account</h1>
 			<div class="container contact-form-container">

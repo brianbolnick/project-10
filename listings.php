@@ -1,18 +1,33 @@
 <?php
 $active = 'listings';
-require_once  'db_config.php';
+require_once 'db_config.php';
 
 $conn = new mysqli($hn, $un, $pw, $db);
-if($conn->connect_error) die($conn->connect_error);
+if ($conn->connect_error) {
+    die($conn->connect_error);
+}
 
-$query = "SELECT * FROM listings";
+$listing_query = "SELECT * FROM listings";
 
-$result = $conn->query($query); 
-if(!$result) die($conn->error);
+$listing_result = $conn->query($listing_query);
+if (!$listing_result) {
+    die($conn->error);
+}
 
-$rows = $result->num_rows;
+$rows = $listing_result->num_rows;
+
+$categories_query = "SELECT * FROM category";
+$categories_result = $conn->query($categories_query);
+if (!$categories_result) {
+    die($conn->error);
+}
+
+$categories = $categories_result->fetch_array(MYSQLI_NUM);
+$category_count = $categories_result->num_rows;
 
 ?>
+
+
 
 <!doctype html>
 <html>
@@ -29,25 +44,24 @@ $rows = $result->num_rows;
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
     </head>
-    <body style="background: #E4E5E7 !important;">       
-        <?php include("header.php"); ?>
+    <body style="background: #E4E5E7 !important;">
+        <?php include "header.php";?>
         <div class="container listings-container"  >
             <h1 class="home-title" style="letter-spacing: 2px;">LISTINGS</h1>
-            <div class="container" style="max-width: 100% !important">                
+            <div class="container" style="max-width: 100% !important">
                 <div class="row form-row" >
                     <form class="form-inline">
                         <div class="form-group mx-sm-3 mb-2 filter-select">
                             <select class="form-control">
-                                <option>Arts and Entertainment</option>
-                                <option>Sporting Goods</option>
-                                <option>Electronics</option>
-                                <option>Furniture and Home Decor</option>
-                                <option>Pet Supplies</option>
-                                <option>Music and Instruments</option>
-                                <option>Culinary and Food</option>
-                                <option>Housing and Real Estate</option>
-                                <option>Tools and Hardware</option>
-                                <option>Books</option>
+<?php
+for ($j = 0; $j < $category_count; $j++) {
+    $categories_result->data_seek($j);
+    $row = $categories_result->fetch_array(MYSQLI_NUM);
+    echo <<<_END
+    <option value=$row[0]>$row[1]</option>
+_END;
+}
+?>
                             </select>
                         </div>
                         <button type="submit" class="btn btn-outline-dark mb-2">
@@ -59,24 +73,23 @@ $rows = $result->num_rows;
             </div>
             <div class="row">
 <?php
-for($j=0; $j<$rows; $j++)
-{
-$result->data_seek($j); 
-$row = $result->fetch_array(MYSQLI_NUM); 
-echo <<<_END
+for ($j = 0; $j < $rows; $j++) {
+    $listing_result->data_seek($j);
+    $row = $listing_result->fetch_array(MYSQLI_NUM);
+    echo <<<_END
 <div class="col-sm-12 col-md-6 col-lg-3">
 <a href="item-details.php?listing_id=$row[0]">
-    <div class="listing-card" style="background-image: url($row[4])">                                                            
+    <div class="listing-card" style="background-image: url($row[4])">
         <div class="listing-card-price">$$row[7]</div>
     </div>
 </a>
-</div> 
+</div>
 _END;
 }
 ?>
             </div>
         </div>
     </body>
-    <?php include("footer.php"); ?>
+    <?php include "footer.php";?>
 
 </html>

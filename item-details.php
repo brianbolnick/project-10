@@ -1,20 +1,25 @@
-<?php     
-    $active = 'listings'; 
-    require_once 'db_config.php';
+<?php
+$active = 'listings';
+require_once 'db_config.php';
 
-    $conn = new mysqli($hn, $un, $pw, $db);
-    if ($conn->connect_error) die($conn->connect_error);
+$conn = new mysqli($hn, $un, $pw, $db);
+if ($conn->connect_error) {
+    die($conn->connect_error);
+}
 
-    if(isset($_GET['listing_id'])){
-                    
-        $listing_id = $_GET['listing_id'];
-        
-        $query = "select * from listings where listing_id='$listing_id' ";
-        $result = $conn->query($query);
-        if(!$result) die ($conn->error);
-        $data = $result->fetch_array(MYSQLI_NUM);	
+if (isset($_GET['listing_id'])) {
+
+    $listing_id = $_GET['listing_id'];
+
+    $query = "select * from listings where listing_id='$listing_id' ";
+    $result = $conn->query($query);
+    if (!$result) {
+        die($conn->error);
     }
-    
+
+    $data = $result->fetch_array(MYSQLI_NUM);
+}
+
 ?>
 <!doctype html>
 <html>
@@ -31,40 +36,46 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
     </head>
-    <body>       
-        <?php include("header.php"); ?>
+    <body>
+        <?php include "header.php";?>
         <div class="container item-container">
             <div class="item-details-container">
-                <h1 class="listing-title"><?php echo $data[2]?></h1>
+                <h1 class="listing-title"><?php echo $data[2] ?></h1>
                 <div class="row">
                     <div class="col-6">
-                        <img src=<?php echo $data[4]?>  alt="" width='100%'>
+                        <img src=<?php echo $data[4] ?>  alt="" width='100%'>
+                        <br>
+                        <a href="contact-seller.php?seller_id=1">
+                            <button type="button" class="btn btn-outline-dark home-listing-button">
+                                <span style="font-size: 1rem; margin-right: 10px;">Contact Seller</span>
+                            </button>
+                        </a>
                     </div>
                     <div class="col">
                         <div class="listing-description">
                             <div class="description-title">Description:</div>
-                            <div class="description"><?php echo $data[3]?></div>                            
-                        </div> 
+                            <div class="description"><?php echo $data[3] ?></div>
+                        </div>
                         <div class="listing-description">
                             <div class="description-title">Category:</div>
-                            <div class="description"><?php echo $data[5]?></div>                            
-                        </div> 
+                            <div class="description"><?php echo $data[5] ?></div>
+                        </div>
                         <div class="listing-description">
                             <div class="description-title">City:</div>
-                            <div class="description"><?php echo $data[6]?></div>                            
-                        </div> 
+                            <div class="description"><?php echo $data[6] ?></div>
+                        </div>
                         <div class="listing-description">
                             <div class="description-title">Price:</div>
-                            <div class="description">$<?php echo $data[7]?></div>                            
-                        </div> 
+                            <div class="description">$<?php echo $data[7] ?></div>
+                        </div>
                         <div class="listing-description">
                             <div class="description-title">List Date:</div>
-                            <div class="description"><?php echo $data[8]?></div>                            
-                        </div>                
+                            <div class="description"><?php echo $data[8] ?></div>
+                        </div>
                     </div>
             </div>
         </div>
     </body>
-    <?php include("footer.php"); ?>
+    <?php include "footer.php";?>
 
 </html>

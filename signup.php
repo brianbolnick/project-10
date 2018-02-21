@@ -1,4 +1,6 @@
-<?php $active = 'signup'; ?>
+<?php
+    $active = 'signup';
+?>
 <!doctype html>
 <html>
     <head>
@@ -14,38 +16,38 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
     </head>
-    <body>       
-        <?php include("header.php"); ?>
+    <body>
+        <?php include "header.php";?>
         <div class="container signup-container"  >
             <div class="signup-form-container">
                 <h1 style='text-align: center; margin-bottom: 20px;'>Sign Up</h1>
-                <form method='post' action='signup.php'>
+                <form method='POST' action='profile.php'>
                     <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="Fname">First Name</label>
-                            <input type="name" class="form-control" id="Fname"placeholder="First Name" required>
+                        <div class="form-group col-md-6">                        
+                            <label for="first_name">First Name</label>
+                            <input type="text" class="form-control" name="first_name" placeholder="First Name" required>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="Lname">Last Name</label>
-                            <input type="name" class="form-control" id="Lname" placeholder="Last Name" required>                      
+                            <label for="last_name">Last Name</label>
+                            <input type="text" class="form-control" name="last_name" placeholder="Last Name" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="signupEmail">Email Address</label>
-                        <input type="email" class="form-control" id="signupEmail" aria-describedby="emailHelp" placeholder="Email Address">
+                        <label for="email">Email Address</label>
+                        <input type="text" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Email Address">
                     </div>
                     <div class="form-group">
-                        <label for="signupPassword">Password</label>
-                        <input type="password" class="form-control" id="signupPassword" placeholder="Password">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name="password" placeholder="Password">
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="PhoneNumber">Phone Number</label>
-                            <input type="text" class="form-control"id="PhoneNumber"	placeholder="Phone Number" required>
+                            <label for="phone">Phone Number</label>
+                            <input type="text" class="form-control" name="phone" placeholder="Phone Number" required>
                         </div>
-                        <div class="form-group col-md-6">                            
-                            <label for="CurrentSchool">Current Institution</label>
-                            <select type="name" class="form-control" id="CurrentSchool" required>
+                        <div class="form-group col-md-6">
+                            <label for="institution">Current Institution</label>
+                            <select type="name" class="form-control" name="institurion" required>
                                 <option selected value="1">University of Utah</option>
                                 <option value="2">Brigham Young University</option>
                                 <option value="3">Salt Lake Community College</option>
@@ -57,12 +59,12 @@
                             </select>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-outline-dark" style="margin-top: 10px;" >Register</button>
+                    <input type="submit" class="btn btn-outline-dark" style="margin-top: 10px;" value="Register">
                 </form>
-            </div>    
+            </div>
         </div>
     </body>
-    <?php include("footer.php"); ?>
+    <?php include "footer.php";?>
 
 
 </html>
