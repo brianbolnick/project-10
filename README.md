@@ -9,7 +9,7 @@
 
 
 ## Features 
-1. Delete User
+1. Delete User - Something will need to replace this
 2. View all listings by a certain user
 3. Create a new listing
 4. Edit/update a listing
