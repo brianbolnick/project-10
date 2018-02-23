@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Feb 21, 2018 at 06:49 AM
+-- Generation Time: Feb 23, 2018 at 08:49 AM
 -- Server version: 5.6.35
 -- PHP Version: 7.1.8
 
@@ -83,6 +83,13 @@ CREATE TABLE `listings` (
   `image_url` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `listings`
+--
+
+INSERT INTO `listings` (`listing_id`, `description`, `title`, `price`, `list_date`, `user_id`, `category_id`, `image_url`) VALUES
+(3, 'A fancy new-ish electronic keyboard!', 'Keyboard', '29.99', '0000-00-00', 5, 6, 'https://images.pexels.com/photos/270640/pexels-photo-270640.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb');
+
 -- --------------------------------------------------------
 
 --
@@ -93,10 +100,18 @@ CREATE TABLE `users` (
   `user_id` int(255) NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
   `institution_id` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `password`, `email`, `phone`, `institution_id`) VALUES
+(5, 'Brian', 'Bolnick', 'testtest', 'brianbolnick@gmail.com', '8018399266', 1);
 
 --
 -- Indexes for dumped tables
@@ -147,12 +162,12 @@ ALTER TABLE `institutions`
 -- AUTO_INCREMENT for table `listings`
 --
 ALTER TABLE `listings`
-  MODIFY `listing_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `listing_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Constraints for dumped tables
 --
