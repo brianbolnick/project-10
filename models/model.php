@@ -137,6 +137,20 @@ class ListingsModel
         return $data;
     }
 
+    public function delete($where)
+    {
+        global $conn;
+        $query = "delete from listings where $where ";
+
+        $result = $conn->query($query);
+        if (!$result) {
+            die("<div class='flash-message' style='position: relative;'>$conn->error</div>");
+        }
+
+        // $data = $result->fetch_assoc();
+        // return $data;
+    }
+
 }
 
 class UsersModel
@@ -158,3 +172,7 @@ class UsersModel
     }
 
 }
+// $obj = new ListingsModel();
+// $temp_id ='8';
+// $obj->delete("`listings`.`listing_id` = " . $temp_id);
+?>

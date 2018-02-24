@@ -255,7 +255,7 @@ h1.listing-title {
 
 .profile-card {
     height: 25.625rem;
-    margin: 0 2rem 2rem;
+    /* margin: 0 2rem 2rem; */
     width: 18.75rem;
     background-color: #fff;
     border: none;
@@ -321,6 +321,8 @@ h1.listing-title {
     color: #596778;
     font-size: 1.1rem;
     font-weight: 300;
+    display: flex;
+    justify-content: space-between;
 }
 
 .profile-options {
@@ -354,6 +356,17 @@ a.profile-option:hover {
     text-decoration: none;
     background-color: #2286ec;
     color: #fff;
+}
+
+.profile-contact {
+    padding: 0 30px;
+}
+
+.profile-location {
+    font-size: 0.875rem;
+    color: #8893a2;
+    margin-bottom: 0.5rem;
+    min-height: 1.12rem;
 }
 
 @media only screen and (max-width: 767px) and (min-width: 320px) {
