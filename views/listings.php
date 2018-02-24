@@ -5,8 +5,8 @@ require_once '../utils/db_config.php';
 session_start();
 
 $conn = new mysqli($hn, $un, $pw, $db);
-if ($conn->connect_error) {
-    die($conn->connect_error);
+if ($conn->error) {
+    die( "<div class='flash-message' style='position: relative;'>$conn->error</div>"  );
 }
 
 $listings = $_SESSION['listings'];
@@ -14,7 +14,7 @@ $listings = $_SESSION['listings'];
 $categories_query = "SELECT * FROM category";
 $categories_result = $conn->query($categories_query);
 if (!$categories_result) {
-    die($conn->error);
+    die( "<div class='flash-message' style='position: relative;'>$conn->error</div>"  );
 }
 
 $categories = $categories_result->fetch_array(MYSQLI_NUM);

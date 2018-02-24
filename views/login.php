@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/styles.css" >    
-    <link rel="stylesheet" href="../styles/login-styles.css" >    
+    <link rel="stylesheet" href="../styles/styles.css" >
+    <link rel="stylesheet" href="../styles/login-styles.css" >
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
     <!-- <script src="//s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js?r=182"></script> -->
@@ -25,8 +25,15 @@
 </head>
 
     <body>
-        <?php include "header.php";?>
-        <form method='post' action='login.php'>
+        <?php 
+        include "header.php";
+        if (isset($_GET['message'])) {
+            echo '<div class="flash-message">';
+            echo $_GET['message'];
+            echo '</div>';
+        }
+        ?>
+        <form method='post' action='../controllers/Login.php'>
             <div class="svgContainer">
                 <div>
                     <svg class="mySVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200">
@@ -120,13 +127,13 @@
 
             <div class="inputGroup inputGroup1">
                 <label for="email1">Email</label>
-                <input type="text" id="email" class="email" maxlength="256"/>
+                <input type="text" id="email" class="email" name='email'/>
                 <p class="helper helper1">email@domain.com</p>
                 <span class="indicator"></span>
             </div>
             <div class="inputGroup inputGroup2">
                 <label for="password">Password</label>
-                <input type="password" id="password" class="password" />
+                <input type="password" id="password" class="password" name="password"/>
             </div>
             <div class="inputGroup inputGroup3">
                 <button id="login" class="btn btn-lg btn-outline-dark" style="width: 100%">Log in</button>
@@ -340,7 +347,4 @@
             TweenMax.set(armR, {x: -93, y: 220, rotation: -105, transformOrigin: "top right"});
         </script>
     </body>
-    <?php include "footer.php";?>
-
-
 </html>

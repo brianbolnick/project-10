@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Feb 23, 2018 at 08:49 AM
+-- Generation Time: Feb 24, 2018 at 06:59 AM
 -- Server version: 5.6.35
 -- PHP Version: 7.1.8
 
@@ -88,7 +88,7 @@ CREATE TABLE `listings` (
 --
 
 INSERT INTO `listings` (`listing_id`, `description`, `title`, `price`, `list_date`, `user_id`, `category_id`, `image_url`) VALUES
-(3, 'A fancy new-ish electronic keyboard!', 'Keyboard', '29.99', '0000-00-00', 5, 6, 'https://images.pexels.com/photos/270640/pexels-photo-270640.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb');
+(1, 'A fancy new-ish electronic keyboard!', 'Keyboard', '29.99', '2018-02-23', 1, 6, 'https://images.pexels.com/photos/270640/pexels-photo-270640.jpeg?h=350&dpr=2&auto=compress&cs=tinysrgb');
 
 -- --------------------------------------------------------
 
@@ -111,7 +111,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `password`, `email`, `phone`, `institution_id`) VALUES
-(5, 'Brian', 'Bolnick', 'testtest', 'brianbolnick@gmail.com', '8018399266', 1);
+(1, 'Brian', 'Bolnick', '2aecae57af75355959e5e6692ff0e6b9', 'brianbolnick@gmail.com', '8018399266', 1);
 
 --
 -- Indexes for dumped tables
@@ -142,6 +142,7 @@ ALTER TABLE `listings`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `email` (`email`),
   ADD KEY `fk_institution_id` (`institution_id`);
 
 --
@@ -162,12 +163,12 @@ ALTER TABLE `institutions`
 -- AUTO_INCREMENT for table `listings`
 --
 ALTER TABLE `listings`
-  MODIFY `listing_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `listing_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Constraints for dumped tables
 --

@@ -3,8 +3,8 @@
 require_once '../utils/db_config.php';
 
 $conn = new mysqli($hn, $un, $pw, $db);
-if ($conn->connect_error) {
-    die($conn->connect_error);
+if ($conn->error) {
+    die("<div class='flash-message' style='position: relative;'>$conn->error</div>");
 }
 
 // User Model
@@ -35,9 +35,11 @@ class User
 			values (NULL, '$first_name', '$last_name', '$password', '$email' , '$phone', '$institution_id') ";
         $result = $conn->query($query);
         if (!$result) {
-            die($conn->error);
-        }
+            die(
+                "<div class='flash-message' style='position: relative;'>$conn->error</div>"
+            );
 
+        }
     }
 }
 
@@ -72,8 +74,25 @@ class Listing
 			values ('$listing_id', '$description', '$title', '$list_date', '$price' , '$category_id', '$user_id', '$image_url') ";
         $result = $conn->query($query);
         if (!$result) {
-            die($conn->error);
+            die(
+                "<div class='flash-message' style='position: relative;'>$conn->error</div>"
+            );
         }
+    }
+
+    public function select($where)
+    {
+        echo $where;
+        global $conn;
+        $query = "Select * from users where $where ";
+
+        $result = $conn->query($query);
+        if (!$result) {
+            die("<div class='flash-message' style='position: relative;'>$conn->error</div>");
+        }
+
+        $data = $result->fetch_assoc();
+        return $data;
     }
 }
 
@@ -88,7 +107,9 @@ class ListingsModel
         $query = "Select * from listings";
         $result = $conn->query($query);
         if (!$result) {
-            die($conn->error);
+            die(
+                "<div class='flash-message' style='position: relative;'>$conn->error</div>"
+            );
         }
 
         $rows = $result->num_rows;
@@ -109,7 +130,27 @@ class ListingsModel
 
         $result = $conn->query($query);
         if (!$result) {
-            die($conn->error);
+            die("<div class='flash-message' style='position: relative;'>$conn->error</div>");
+        }
+
+        $data = $result->fetch_assoc();
+        return $data;
+    }
+
+}
+
+class UsersModel
+{
+    public $users = array();
+
+    public function select($where)
+    {
+        global $conn;
+        $query = "Select * from users where $where ";
+
+        $result = $conn->query($query);
+        if (!$result) {
+            die("<div class='flash-message' style='position: relative;'>$conn->error</div>");
         }
 
         $data = $result->fetch_assoc();

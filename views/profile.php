@@ -1,16 +1,26 @@
-<?php $active = 'listings';
-require_once  'db_config.php';
+<?php $active = 'profile';
+require_once '../utils/db_config.php';
 
+$message= '';
+session_start();
+if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
+    $message = 'You must be signed in to access that page.';
+    header("Location: ./login.php?message=You must be signed in to access that page.");
+}
 
-$name = (isset($_POST['first_name'])) ? $_POST['first_name'] : ""; 
+$name = (isset($_POST['first_name'])) ? $_POST['first_name'] : "";
 
 $conn = new mysqli($hn, $un, $pw, $db);
-if($conn->connect_error) die($conn->connect_error);
+if ($conn->error) {
+    die( "<div class='flash-message' style='position: relative;'>$conn->error</div>"  );
+}
 
 $query = "SELECT * FROM listings";
 
-$result = $conn->query($query); 
-if(!$result) die($conn->error);
+$result = $conn->query($query);
+if (!$result) {
+    die( "<div class='flash-message' style='position: relative;'>$conn->error</div>"  );
+}
 
 $rows = $result->num_rows;
 
@@ -18,8 +28,8 @@ $rows = $result->num_rows;
 <!doctype html>
 <html>
     <?php include "head.php"?>
-    <body>       
-        <?php include("header.php"); ?>
+    <body>
+        <?php include "header.php";?>
         <?php echo $name ?>
         <div class="container listings-container"  >
             <h1 class="home-title">My Account</h1>
@@ -78,16 +88,15 @@ $rows = $result->num_rows;
 		</div>
 		<div class="row">
 		<?php
-for($j=0; $j<$rows; $j++)
-{
-$result->data_seek($j); 
-$row = $result->fetch_array(MYSQLI_NUM); 
-echo <<<_END
+for ($j = 0; $j < $rows; $j++) {
+    $result->data_seek($j);
+    $row = $result->fetch_array(MYSQLI_NUM);
+    echo <<<_END
 <div class="col-sm-12 col-md-6 col-lg-3">
 	<div class="card mt-3">
 	<div class="card-img-top">
 		<a href="item-details.php">
-			<div class="listing-card" style="background-image: url($row[4])">                                                            
+			<div class="listing-card" style="background-image: url($row[4])">
 				<div class="listing-card-price">$$row[7]</div>
 			</div>
 		</a>
@@ -103,6 +112,6 @@ _END;
     </div>
 	</div>
 	</body>
-    <?php include("footer.php"); ?>
+    <?php include "footer.php";?>
 
 </html>

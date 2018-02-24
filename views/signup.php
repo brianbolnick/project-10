@@ -1,5 +1,23 @@
 <?php
-    $active = 'signup';
+$active = 'signup';
+require_once '../models/model.php';
+require_once '../utils/db_config.php';
+session_start();
+
+$conn = new mysqli($hn, $un, $pw, $db);
+if ($conn->error) {
+    die("<div class='flash-message' style='position: relative;'>$conn->error</div>");
+}
+
+$categories_query = "SELECT * FROM institutions";
+$categories_result = $conn->query($categories_query);
+if (!$categories_result) {
+    die("<div class='flash-message' style='position: relative;'>$conn->error</div>");
+}
+
+$categories = $categories_result->fetch_array(MYSQLI_NUM);
+$category_count = $categories_result->num_rows;
+
 ?>
 <!doctype html>
 <html>
@@ -9,9 +27,9 @@
         <div class="container signup-container"  >
             <div class="signup-form-container">
                 <h1 style='text-align: center; margin-bottom: 20px;'>Sign Up</h1>
-                <form method='POST' action='profile.php'>
+                <form method='POST' action='../controllers/Signup.php'>
                     <div class="form-row">
-                        <div class="form-group col-md-6">                        
+                        <div class="form-group col-md-6">
                             <label for="first_name">First Name</label>
                             <input type="text" class="form-control" name="first_name" placeholder="First Name" required>
                         </div>
@@ -35,15 +53,16 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="institution">Current Institution</label>
-                            <select type="name" class="form-control" name="institurion" required>
-                                <option selected value="1">University of Utah</option>
-                                <option value="2">Brigham Young University</option>
-                                <option value="3">Salt Lake Community College</option>
-                                <option value="4">Weber State University</option>
-                                <option value="5">Utah Valley University</option>
-                                <option value="6">Utah State University</option>
-                                <option value="7">Dixie State College</option>
-                                <option value="8">Snow College</option>
+                            <select type="name" class="form-control" name="institution_id" required>
+<?php
+for ($j = 0; $j < $category_count; $j++) {
+    $categories_result->data_seek($j);
+    $row = $categories_result->fetch_array(MYSQLI_NUM);
+    echo <<<_END
+    <option value=$row[0]>$row[1]</option>
+_END;
+}
+?>
                             </select>
                         </div>
                     </div>
@@ -53,6 +72,4 @@
         </div>
     </body>
     <?php include "footer.php";?>
-
-
 </html>

@@ -1,13 +1,13 @@
 <?php $active = 'listings';
-require_once  'db_config.php';
+require_once  '../utils.db_config.php';
 
 $conn = new mysqli($hn, $un, $pw, $db);
-if($conn->connect_error) die($conn->connect_error);
+if($conn->connect_error) die( "<div class='flash-message' style='position: relative;'>$conn->error</div>"  );
 
 $query = "SELECT * FROM listings";
 
 $result = $conn->query($query); 
-if(!$result) die($conn->error);
+if(!$result) die( "<div class='flash-message' style='position: relative;'>$conn->error</div>"  );
 
 $rows = $result->num_rows;
 

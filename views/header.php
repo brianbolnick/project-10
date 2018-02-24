@@ -1,3 +1,14 @@
+<?php
+session_start();
+if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
+    $link = "<a class='nav-link header-link' href='./login.php'>Log In</a>";
+    $logout = '';
+} else {
+    $link = "<a class='nav-link header-link' href='./profile.php'>Profile</a>";
+    $logout = "<li class='nav-item'><a class='nav-link header-link' href='../controllers/Logout.php'>Log Out</a> </li>";
+}
+?>
+
 <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light" style="font-family: 'Lato', sans-serif !important;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -19,9 +30,10 @@
                 <?php echo ($active == 'contact') ? '<li class="nav-item active">' : '<li class="nav-item">' ?>
                     <a class="nav-link header-link" href="#" data-toggle="modal" data-target="#contactModal">Contact</a>
                 </li>
-                <?php echo ($active == 'login') ? '<li class="nav-item active">' : '<li class="nav-item">' ?>
-                    <a class="nav-link header-link" href="./login.php">Log In</a>
+                <?php echo ($active == 'login' || $active == 'profile') ? '<li class="nav-item active">' : '<li class="nav-item">' ?>
+                    <?php echo $link ?>
                 </li>
+                <?php echo $logout ?>
             </ul>
         </span>
     </div>
