@@ -23,10 +23,14 @@ if (isset($_POST['email'])) {
     $user_id = $tmp['user_id'];
 
     session_start();
-
-    $_SESSION['username'] = $email; 
-    $_SESSION['user_id'] = $user_id; 
+    $_SESSION['username'] = $email;
+    $_SESSION['user_id'] = $user_id;
     $_SESSION['password'] = $password;
+    $_SESSION['first_name'] = $first_name;
+    $_SESSION['last_name'] = $last_name;
+    $_SESSION['institution_id'] = $institution_id;
+    $_SESSION['phone'] = $phone;
+    
 
     //forward to view page
     header("Location: ../views/index.php");

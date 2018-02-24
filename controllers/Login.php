@@ -17,6 +17,10 @@ if (isset($_POST['email'])) {
     //assign variables from db query
     $user_id = $tmp['user_id'];
     $db_password = $tmp['password'];
+    $db_fn = $tmp['first_name'];
+    $db_ln = $tmp['last_name'];
+    $db_phone = $tmp['phone'];
+    $db_inst = $tmp['institution_id'];
 
     //Compare passwords
     if ($token == $db_password) {
@@ -26,6 +30,10 @@ if (isset($_POST['email'])) {
         $_SESSION['username'] = $email;
         $_SESSION['user_id'] = $user_id;
         $_SESSION['password'] = $password;
+        $_SESSION['first_name'] = $db_fn;
+        $_SESSION['last_name'] = $db_ln;
+        $_SESSION['phone'] = $db_phone;
+        $_SESSION['institution_id'] = $db_inst;
 
         // //forward to view page
         header("Location: ../views/index.php");

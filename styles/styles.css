@@ -1,9 +1,9 @@
-body { 
-    background: url('../img/tags.jpeg');   
+body {
+    background: url('../img/tags.jpeg');
     background-size: cover;
-    background-repeat: no-repeat; 
-    min-height: 100vh;          
-    font-family: 'Lato', sans-serif !important;  
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    font-family: 'Lato', sans-serif !important;
 }
 
 .home-title {
@@ -26,7 +26,7 @@ body {
     top: 35%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
@@ -36,52 +36,50 @@ img.nav-image {
 
 img.nav-image:hover {
     transition: transform 0.7s;
-	transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .header-link {
-	color: #f5f5f5;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-size: 0.9rem;
-	transition: transform 0.7s;
-	position: relative;
-	display: inline-block;
-	transition: color .2s ease;	
+    color: #f5f5f5;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    transition: transform 0.7s;
+    position: relative;
+    display: inline-block;
+    transition: color .2s ease;
 }
 
 .header-link:hover {
-	color: #f5f5f5;
-	text-decoration: none;
+    color: #f5f5f5;
+    text-decoration: none;
 }
 
 .header-link:hover::after,
 .header-link:hover::before {
-	width: 100%;
-	left: 0;
+    width: 100%;
+    left: 0;
 }
 
 .header-link::after,
 .header-link::before {
-	content: '';
-	position: absolute;
-	top: calc(100% + 5px);
-	width: 0;
-	right: 0;
-	height: 3px;
+    content: '';
+    position: absolute;
+    top: calc(100% + 5px);
+    width: 0;
+    right: 0;
+    height: 3px;
 }
 
 .header-link::before {
-	transition: width 0.4s cubic-bezier(0.51, 0.18, 0, 0.88) 0.1s;
-	background: #E4DEC3;
+    transition: width 0.4s cubic-bezier(0.51, 0.18, 0, 0.88) 0.1s;
+    background: #E4DEC3;
 }
 
 .header-link::after {
-	transition: width 0.2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
-	background: #CDAE9F;
-
+    transition: width 0.2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
+    background: #CDAE9F;
 }
-
 
 .login-container {
     margin: 0;
@@ -89,7 +87,7 @@ img.nav-image:hover {
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
@@ -105,7 +103,7 @@ img.nav-image:hover {
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
@@ -115,7 +113,7 @@ img.nav-image:hover {
     top: 57%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
@@ -124,14 +122,13 @@ img.nav-image:hover {
     padding: 30px;
 }
 
-
 .signup-container {
     margin: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
@@ -166,7 +163,7 @@ img.nav-image:hover {
 .listing-card:hover {
     margin-bottom: 25px;
     transition: transform 0.7s;
-	transform: scale(1.02);
+    transform: scale(1.02);
 }
 
 .listing-card-price {
@@ -195,13 +192,13 @@ img.nav-image:hover {
     top: 55%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     text-align: left;
 }
 
 .add-form-container {
     background: #f5f5f5;
-	padding: 30px;
+    padding: 30px;
 }
 
 .item-container {
@@ -217,8 +214,8 @@ h1.listing-title {
 .del-form-container {
     height: 100px;
     /*background: #f5f5f5; */
-	padding: 30px;
-	justify-content: space-evenly;
+    padding: 30px;
+    justify-content: space-evenly;
 }
 
 .description-title {
@@ -227,18 +224,19 @@ h1.listing-title {
     text-transform: uppercase;
 }
 
-#navderek ul{
-    background:#fff;
-    background:rgba(255,255,255,0);
-    list-style:none;
-    position:absolute;
-    z-index:80;
-	display: none;
+#navderek ul {
+    background: #fff;
+    background: rgba(255, 255, 255, 0);
+    list-style: none;
+    position: absolute;
+    z-index: 80;
+    display: none;
     /*left:-9999px;*/
 }
-#navderek li:hover ul{
+
+#navderek li:hover ul {
     /*left:0;*/
-	display:block;
+    display: block;
 }
 
 .sign-up-prompt {
@@ -255,25 +253,84 @@ h1.listing-title {
     background: #f29b6f73;
 }
 
+.profile-card {
+    height: 25.625rem;
+    margin: 0 2rem 2rem;
+    width: 18.75rem;
+    background-color: #fff;
+    border: none;
+    border-radius: 0.1875rem;
+    box-shadow: 0 0.3125rem 1rem 0 rgba(0, 0, 0, .21);
+    position: relative;
+    width: 18.75rem;
+}
+
+.profile-container {
+    text-align: center;
+    max-width: 90% !important;
+    margin-top: 50px;
+    height: 100%;
+}
+
+.profile-card-heading {
+    height: 145px;
+}
+
+.profile-card-body {
+    background-color: #f6f7f9;
+    border-radius: 0 0 0.1875rem 0.1875rem;
+    border-top: 0.0625rem solid #e8ebf1;
+    height: 265px;
+    padding-top: 60px;
+}
+
+.profile-card-img {
+    top: 80px;
+    background-color: #fff;
+    border: 0.25rem solid #fff;
+    box-shadow: 0 0.25rem 0.5rem 0 #b9c0cb;
+    font-size: 3.75rem;
+    border-radius: 2em;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    height: 2em;
+    letter-spacing: 0.0313em;
+    line-height: 2em;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    transform: translate(0, 0);
+    width: 2em;
+    background: url(https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png);
+    background-size: cover;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-name {
+    font-size: 2rem;
+}
+
 @media only screen and (max-width: 767px) and (min-width: 320px) {
     .hide-on-mobile {
         display: none !important;
     }
-
-    body { 
-        background: url('../img/tags-mobile.jpeg');                       
+    body {
+        background: url('../img/tags-mobile.jpeg');
     }
-	
-	.home-container {
+    .home-container {
         margin: 0;
         position: absolute;
         top: 50%;
         left: 50%;
         margin-right: -50%;
-        transform: translate(-50%, -50%); 
+        transform: translate(-50%, -50%);
         text-align: center;
     }
-
     .signup-container {
         margin: 0;
         position: absolute;
@@ -283,25 +340,20 @@ h1.listing-title {
         transform: translate(-50%, -50%);
         text-align: center;
     }
-
     .form-row {
         justify-content: center;
     }
-
     .filter-select {
         margin-right: 10px;
     }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1199px) {
-
-}
+@media only screen and (min-width: 768px) and (max-width: 1199px) {}
 
 @media only screen and (min-width: 767px) {
     .hide-on-med-and-up {
         display: none !important;
     }
 }
-@media only screen and (min-width: 1500px) {
 
-}
+@media only screen and (min-width: 1500px) {}
