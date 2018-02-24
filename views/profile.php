@@ -75,7 +75,7 @@ for ($j = 0; $j < $rows; $j++) {
     $price = $row['price'];
     $id = $row['listing_id'];
     echo <<<_END
-<div class="col">
+<div class="col-md-6">
 	<div class="card mt-3">
 	<div class="card-img-top">
 		<a href="item-details.php?listing_id=$id">
