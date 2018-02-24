@@ -56,10 +56,14 @@ $rows = $result->num_rows;
                         </div>
                         <div class="profile-contact">
                             <?php 
-                            echo "<div><i class='far fa-envelope-open'></i> " . $_SESSION['username'] . "</div>";
-                            echo " <div><i class='fas fa-phone'></i> " . $_SESSION['phone'] . "</div>";
-                            echo " <div><i class='fas fa-graduation-cap'></i> " . $_SESSION['institution_id'] . "</div>";
+                            echo "<div class='contact'><i class='far fa-envelope-open'></i> " . $_SESSION['username'] . "</div>";
+                            echo " <div class='contact'><i class='fas fa-phone'></i> " . $_SESSION['phone'] . "</div>";
+                            echo " <div class='contact'><i class='fas fa-graduation-cap'></i> " . $_SESSION['institution_id'] . "</div>";
                             ?>    
+                        </div>
+                        <div class="profile-options">
+                            <a class='profile-option' href="./edit-profile.php">Edit Profile</a>
+                            <a class='profile-option' href="./add-listing.php">New Listing</a>
                         </div>
                     </div>
 

@@ -273,7 +273,7 @@ h1.listing-title {
 }
 
 .profile-card-heading {
-    height: 145px;
+    height: 115px;
 }
 
 .profile-card-body {
@@ -285,7 +285,7 @@ h1.listing-title {
 }
 
 .profile-card-img {
-    top: 80px;
+    top: 50px;
     background-color: #fff;
     border: 0.25rem solid #fff;
     box-shadow: 0 0.25rem 0.5rem 0 #b9c0cb;
@@ -313,6 +313,47 @@ h1.listing-title {
 
 .profile-name {
     font-size: 2rem;
+    color: #596778;
+    font-weight: 600;
+}
+
+.contact {
+    color: #596778;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.profile-options {
+    background-color: #fff;
+    border-radius: 0 0 0.1875rem 0.1875rem;
+    border-top: 0.0625rem solid #e8ebf1;
+    display: -webkit-box;
+    display: flex;
+    height: 3.125rem;
+    justify-content: space-around;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    align-items: center;
+}
+
+a.profile-option {
+    align-items: center;
+    border-radius: 0;
+    color: #008be1;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    padding: 0;
+    font-weight: 700;
+    height: 100%;
+}
+
+a.profile-option:hover {
+    border-color: transparent;
+    text-decoration: none;
+    background-color: #2286ec;
+    color: #fff;
 }
 
 @media only screen and (max-width: 767px) and (min-width: 320px) {
