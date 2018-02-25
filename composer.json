@@ -1,6 +1,6 @@
 {
     "require": {
-        "ext-mbstring": "*",
+        "ext-mbstring": "^7.2",
         "ext-mysqli": "*",
         "aws/aws-sdk-php": "~2.6",
         "sendgrid/sendgrid": "~6.0"
