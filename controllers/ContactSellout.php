@@ -1,10 +1,15 @@
 <?php
 require '../vendor/autoload.php';
+
+if (!isset($_ENV['SENDGRID_API_KEY'])) {
+    require '../utils/secrets.php';
+}
+
 $name = $_POST['name'];
 $email = $_POST['email'];
 $reason = $_POST['reason'];
 $description = $_POST['description'];
-$apiKey = isset($_ENV['SENDGRID_API_KEY']) ? $_ENV['SENDGRID_API_KEY'] : "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";
+$apiKey = $_ENV['SENDGRID_API_KEY'];
 
 $from = new SendGrid\Email($name, $email);
 $subject = "Sellout Contact Form: $reason";;

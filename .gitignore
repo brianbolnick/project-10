@@ -2,3 +2,4 @@
 vendor
 .DS_Store
 uploads/*
+utils/secrets.php
