@@ -49,31 +49,31 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
         </button>
       </div>
       <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="contactName">Your Name</label>
-                        <input type="text" class="form-control" id="contactName" placeholder="Your name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contactEmail">Email address</label>
-                        <input type="email" class="form-control" id="contactEmail" placeholder="Enter email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contactIssue">Reason for contact</label>
-                        <select class="form-control" id="contactIssue" required>
-                            <option>Account Issue</option>
-                            <option>General Question</option>
-                            <option>Listing Issue</option>
-                            <option>Report a Listing/User</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group" required>
-                        <label for="contactDetails">Detailed description of issue</label>
-                        <textarea class="form-control" rows="3" id="fDescription"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-outline-dark" style="margin-top: 10px; float: right;" >Submit</button>
-                    </form>
+            <form method="post" action="../controllers/ContactSellout.php">
+                <div class="form-group">
+                    <label for="contactName">Your Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Your name" required name="name">
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" required name="email">
+                </div>
+                <div class="form-group">
+                    <label for="contactIssue">Reason for contact</label>
+                    <select class="form-control" id="reason" required name="reason">
+                        <option>Account Issue</option>
+                        <option>General Question</option>
+                        <option>Listing Issue</option>
+                        <option>Report a Listing/User</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group" required>
+                    <label for="contactDetails">Detailed description of issue</label>
+                    <textarea class="form-control" rows="3" id="fDescription" name="description"></textarea>
+                </div>
+                <button type="submit" class="btn btn-outline-dark" style="margin-top: 10px; float: right;" >Submit</button>
+            </form>
       </div>
       <div class="modal-footer">
        <em>* All requests should be responded to within 24 hours</em>

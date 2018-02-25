@@ -49,7 +49,21 @@ _END;
                             <span style="letter-spacing: 2px">FILTER</span>
                             <i class="fas fa-filter"></i>
                         </button>
-                    </form>
+                           
+                        </form>
+<?php 
+    if (isset($_GET['category'])) {
+echo <<<_END
+        <div class='reset-button' style="margin-left: 5px;">
+            <a href="../controllers/GetListings.php">
+                <button class="btn btn-outline-dark mb-2">
+                  <span style="letter-spacing: 2px">RESET</span>
+                </button>
+            </a>
+        </div>
+_END;
+    }
+?>
                 </div>
             </div>
             <div class="row">
