@@ -20,6 +20,6 @@ require_once '../utils/check_session.php';
 			</div>
 		</div>
     </body>
-    <?php include "footer.php";?>
+    
 
 </html>

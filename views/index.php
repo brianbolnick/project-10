@@ -2,9 +2,9 @@
 <!doctype html>
 <html>
     <?php include "head.php"?>
-    <body>
+    <body class='custom-body'> 
         <?php include "header.php";?>
-        <div class="container home-container"  >
+        <div class="container home-container" >
             <h1 class="home-title">Classifieds for College Students.</h1>
             <a href="../controllers/GetListings.php">
                 <button type="button" class="btn btn-outline-dark home-listing-button">

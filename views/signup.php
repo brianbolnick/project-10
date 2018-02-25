@@ -22,8 +22,8 @@ $category_count = $categories_result->num_rows;
 <!doctype html>
 <html>
     <?php include "head.php"?>
-    <body>
-        <?php include "header.php";?>
+    <body class='custom-body'>        
+     <?php include "header.php";?>
         <div class="container signup-container"  >
             <div class="signup-form-container">
                 <h1 style='text-align: center; margin-bottom: 20px;'>Sign Up</h1>
@@ -71,5 +71,5 @@ _END;
             </div>
         </div>
     </body>
-    <?php include "footer.php";?>
+    
 </html>

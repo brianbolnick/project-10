@@ -24,7 +24,7 @@
 
 </head>
 
-    <body>
+    <body class='custom-body'>
         <?php 
         include "header.php";
         if (isset($_GET['message'])) {

@@ -1,9 +1,15 @@
 body {
-    background: url('../img/tags.jpeg');
+    background: #E4E5E7; 
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
     font-family: 'Lato', sans-serif !important;
+}
+
+body.custom-body {
+    background: url(../img/tags.jpeg) !important;
+    background-size: cover !important;
+    background-repeat: no-repeat;
 }
 
 .home-title {
@@ -478,8 +484,11 @@ button.btn.btn-outline-dark.contact-seller-button {
     .hide-on-mobile {
         display: none !important;
     }
-    body {
-        background: url('../img/tags-mobile.jpeg');
+
+    body.custom-body {
+        background: url('../img/tags-mobile.jpeg') !important;
+        background-size: cover !important;
+        background-repeat: no-repeat;
     }
     .home-container {
         margin: 0;

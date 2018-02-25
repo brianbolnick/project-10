@@ -25,7 +25,7 @@ $category_count = $categories_result->num_rows;
 <!doctype html>
 <html>
     <?php include "head.php"?>
-    <body style="background: #E4E5E7 !important;">
+    <body>
         <?php include "header.php";?>
         <div class="container listings-container"  >
             <h1 class="home-title" style="letter-spacing: 2px;">LISTINGS</h1>
@@ -69,6 +69,6 @@ _END;
             </div>
         </div>
     </body>
-    <?php include "footer.php";?>
+    
 
 </html>

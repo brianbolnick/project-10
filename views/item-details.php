@@ -71,5 +71,5 @@ $state = $inst_data['state'];
             </div>            
         </div>
     </body>
-    <?php include "footer.php";?>
+    
 </html>
