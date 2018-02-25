@@ -13,13 +13,15 @@ if ($conn->error) {
 }
 
 $joinQuery = "SELECT listings.*, users.first_name, users.institution_id FROM listings, users WHERE listings.user_id = users.user_id AND listings.listing_id=$listing_id;";
-    
+
 $joinResult = $conn->query($joinQuery);
 
-if (!$joinResult) die( "<div class='flash-message' style='position: relative;'>$conn->error</div>"  );
+if (!$joinResult) {
+    die("<div class='flash-message' style='position: relative;'>$conn->error</div>");
+}
+
 $joinData = $joinResult->fetch_assoc();
 $institution_id = $joinData['institution_id'];
-
 
 $inst = "Select * from institutions where institution_id = '$institution_id' ";
 
@@ -39,7 +41,7 @@ $state = $inst_data['state'];
     <?php include "head.php"?>
     <body>
         <?php include "header.php";?>
-         <div class="container item-container">
+         <div class="container item-container hide-on-mobile">
             <div class="item-left" style='background: url(<?php echo $data['image_url'] ?>);'></div>
             <div class="item-right">
                 <div class="item-title">
@@ -68,8 +70,39 @@ $state = $inst_data['state'];
                     <i class="fas fa-map-marker"></i> <?php echo "$city, $state" ?>
                     </div>
                 </div>
-            </div>            
+            </div>
+        </div>
+        <div class="container item-container-mobile hide-on-med-and-up">
+            <div class="item-top" style='background: url(<?php echo $data['image_url'] ?>);'></div>
+            <div class="item-bottom">
+                <div class="item-title">
+                    <?php echo $data['title'] ?>
+                </div>
+                <div class="item-date">
+                    Posted on <?php echo $data['list_date'] ?>
+                </div>
+                <div class="item-price">
+                    $<?php echo $data['price'] ?>
+                </div>
+
+                <div class="item-description">
+                    <div class="description-title">DESCRIPTION</div>
+                    <?php echo $data['description'] ?>
+                </div>
+
+                <div class="item-footer">
+                    <div><a href="contact-seller.php?seller_id=<?php echo $data['user_id'] ?>">
+                        <button type="button" class="btn btn-outline-dark contact-seller-button">
+                            <i class="fas fa-envelope "></i>
+                            <span style="font-size: 1rem; margin-right: 10px;">Contact Seller</span>
+                        </button>
+                    </a></div>
+                    <div class="item-location">
+                    <i class="fas fa-map-marker"></i> <?php echo "$city, $state" ?>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
-    
+
 </html>

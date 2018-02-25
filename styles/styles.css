@@ -1,5 +1,5 @@
 body {
-    background: #E4E5E7; 
+    background: #E4E5E7;
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
@@ -410,6 +410,7 @@ a.profile-option:hover {
     /* position: relative; */
     /* bottom: 60px; */
 }
+
 .item-description {
     font-weight: 300;
     font-size: 1.2rem;
@@ -419,7 +420,6 @@ a.profile-option:hover {
     /* bottom: 99px; */
     /* height: 100%; */
 }
-
 
 .description-title {
     font-weight: 400;
@@ -484,7 +484,58 @@ button.btn.btn-outline-dark.contact-seller-button {
     .hide-on-mobile {
         display: none !important;
     }
-
+    .container.item-container-mobile {
+        height: 35rem;
+        background: #f5f5f5;
+        padding: 0;
+        margin-top: 5%;
+        display: flex;
+        flex-flow: column;
+        border-radius: 5px;
+        width: 90%;
+        box-shadow: 0px 0px 25px 0px #21212161;
+    }
+    .item-top {
+        height: 30%;
+        width: 100%;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+    .item-bottom {
+        height: 70%;
+        width: 100%;
+        padding: 0rem 2rem;
+    }
+    .item-title {
+        font-size: 1.6rem;
+        margin-bottom: 0px;
+    }
+    .item-price {
+        font-size: 1.4rem;
+    }
+    .item-description {
+        font-weight: 300;
+        font-size: 1rem;
+        margin: 5px 0;
+        height: 210px;
+    }
+    .item-footer {
+        border-top: solid 1px #d7d7d7;
+        padding-top: 15px;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    button.btn.btn-outline-dark.contact-seller-button {
+        height: 40px;
+        padding: 0 0px 0 5px;
+    }
+    .item-location {
+        color: #969595;
+        font-weight: 300;
+        font-size: 0.9rem;
+        line-height: 2.5rem;
+    }
     body.custom-body {
         background: url('../img/tags-mobile.jpeg') !important;
         background-size: cover !important;
