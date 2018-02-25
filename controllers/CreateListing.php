@@ -50,7 +50,7 @@ if (isset($_FILES["image"]["name"])) {
             $category_id = $_POST['category_id'];
             $date = date("M n, Y");
             //code to create book list
-            $listing = new Listing(null, $description, $title, $date, $price, $category_id, $_SESSION['user_id'], $image_url);
+            $listing = new Listing(null, addslashes($description), $title, $date, $price, $category_id, $_SESSION['user_id'], $image_url);
             $listing->insert();
             header("Location: ../views/profile.php");
             exit();

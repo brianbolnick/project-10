@@ -372,15 +372,18 @@ a.profile-option:hover {
     height: 100%;
     width: 50%;
     padding: 2rem 5rem;
-    display: flex;
-    flex-flow: column;
-    justify-content: space-around;
+    /* display: flex; */
+    /* flex-flow: column; */
+    /* justify-content: space-around; */
 }
 
 .item-title {
     font-size: 2rem;
     letter-spacing: 1px;
-    /* margin-bottom: 5px; */
+    margin-bottom: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .item-date {
@@ -389,26 +392,28 @@ a.profile-option:hover {
     font-size: 0.9rem;
     letter-spacing: 1px;
     font-weight: 700;
-    /* margin-bottom: 10px; */
-    position: relative;
-    bottom: 30px;
-}
-
-.item-description {
-    font-weight: 300;
-    font-size: 1.2rem;
-    margin: 25px 0;
-    position: relative;
-    bottom: 99px;
+    margin-bottom: 10px;
+    /* position: relative; */
+    /* bottom: 30px; */
 }
 
 .item-price {
     font-size: 2rem;
     letter-spacing: 1px;
     font-weight: 700;
-    position: relative;
-    bottom: 60px;
+    /* position: relative; */
+    /* bottom: 60px; */
 }
+.item-description {
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin: 25px 0;
+    height: 250px;
+    /* position: relative; */
+    /* bottom: 99px; */
+    /* height: 100%; */
+}
+
 
 .description-title {
     font-weight: 400;
@@ -428,10 +433,45 @@ a.profile-option:hover {
 .item-footer {
     border-top: solid 1px #d7d7d7;
     padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-location {
+    color: #969595;
+    font-weight: 300;
+    line-height: 2rem;
 }
 
 button.btn.btn-outline-dark.contact-seller-button {
     height: 40px;
+}
+
+.profile-listing-card {
+    height: 19rem;
+    margin-top: 20px;
+    background: #fff;
+    padding: 0;
+    transition: 0.2s;
+}
+
+.profile-listing-card:hover {
+    transition: 0.2s;
+    box-shadow: 0px 0px 10px 2px #2121218c;
+}
+
+.profile-listing-card-image {
+    height: 85%;
+    background-size: cover !important;
+}
+
+.profile-listing-card-options {
+    background-color: #f5f5f5;
+    display: flex;
+    height: 3.125rem;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
 }
 
 @media only screen and (max-width: 767px) and (min-width: 320px) {

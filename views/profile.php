@@ -3,17 +3,6 @@ require_once '../utils/db_config.php';
 require_once '../utils/check_session.php';
 $message = '';
 session_start();
-// if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
-//     $message = 'You must be signed in to access that page.';
-//     header("Location: ./login.php?message=You must be signed in to access that page.");
-//     $first_name = $_SESSION['username'];
-//     // $last_name = $_SESSION['last_name'];
-//     // $email = $_SESSION['username'];
-//     // $phone = $_SESSION['phone'];
-//     // $institution_id = $_SESSION['institution_id'];
-// }
-
-// $name = (isset($_POST['first_name'])) ? $_POST['first_name'] : "";
 
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->error) {
@@ -92,7 +81,7 @@ $state = $inst_data['state'];
             </div>
             <div class="col-md-8">
                 <h2>My Listings</h2>
-                    <div class="row">
+                    <div class="row">                    
 		<?php
 for ($j = 0; $j < $rows; $j++) {
     $result->data_seek($j);
@@ -101,23 +90,22 @@ for ($j = 0; $j < $rows; $j++) {
     $price = $row['price'];
     $id = $row['listing_id'];
     echo <<<_END
-<div class="col-md-6">
-	<div class="card mt-3">
-	<div class="card-img-top">
-		<a href="../controllers/ViewListing.php?listing_id=$id">
-			<div class="listing-card" style="background-image: url($img)">
-				<div class="listing-card-price">$$price</div>
-			</div>
-		</a>
-	</div>
-	<div class="card-footer">
-		<a href="edit-listing.php" class="col-sm-4 btn btn-warning">Edit</a>   <a href="../controllers/DeleteListing.php?listing_id=$id" class="col-sm-4 btn btn-danger">Delete</a>
-	</div>
-	</div>
+    <div class="col-md-6">
+    <a href="../controllers/ViewListing.php?listing_id=$id">
+        <div class="profile-listing-card">
+            <div class="profile-listing-card-image" style="background: url($img);">
+            </div>
+            <div class="profile-listing-card-options">
+                <a class='profile-option' href="../controllers/EditListing.php?listing_id=$id">Edit</a>
+                <a class='profile-option' href="../controllers/DeleteListing.php?listing_id=$id">Delete</a>
+            </div>
+        </div>  
+    </a>                        
 </div>
 _END;
 }
 ?>
+
                 </div>
             </div>
         </div>
