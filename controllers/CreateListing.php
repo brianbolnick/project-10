@@ -48,8 +48,9 @@ if (isset($_FILES["image"]["name"])) {
             $description = $_POST['description'];
             $price = $_POST['price'];
             $category_id = $_POST['category_id'];
+            $date = date("M n, Y");
             //code to create book list
-            $listing = new Listing(null, $description, $title, date("j/n/Y"), $price, $category_id, $_SESSION['user_id'], $image_url);
+            $listing = new Listing(null, $description, $title, $date, $price, $category_id, $_SESSION['user_id'], $image_url);
             $listing->insert();
             header("Location: ../views/profile.php");
             exit();

@@ -137,6 +137,42 @@ class ListingsModel
         return $data;
     }
 
+    public function filter($where)
+    {
+        // global $conn;
+        // $query = "Select * from listings where $where";
+
+        // $result = $conn->query($query);
+        // if (!$result) {
+        //     die("<div class='flash-message' style='position: relative;'>$conn->error</div>");
+        // }
+
+        // $data = $result->fetch_assoc();
+        // return $data;
+
+        global $listings, $conn;
+
+        $query = "Select * from listings where $where";
+        $result = $conn->query($query);
+        if (!$result) {
+            die(
+                "<div class='flash-message' style='position: relative;'>$conn->error</div>"
+            );
+        }
+
+        $rows = $result->num_rows;
+        for ($j = 0; $j < $rows; $j++) {
+            $result->data_seek($j);
+            $row = $result->fetch_assoc();
+
+            $listing = new Listing($row['listing_id'], $row['description'], $row['title'], $row['list_date'], $row['price'], $row['category_id'], $row['user_id'], $row['image_url']);
+            $listings[] = $listing;
+        }
+        return $listings;
+    }
+
+    
+
     public function delete($where)
     {
         global $conn;
@@ -173,6 +209,7 @@ class UsersModel
 
 }
 // $obj = new ListingsModel();
-// $temp_id ='8';
-// $obj->delete("`listings`.`listing_id` = " . $temp_id);
+// $temp_id ='6';
+// // $obj->select("`listings`.`category_id` = " . $temp_id);
+// print_r($obj->selectAll());
 ?>

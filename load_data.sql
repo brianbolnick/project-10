@@ -77,7 +77,7 @@ CREATE TABLE `listings` (
   `description` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
   `price` varchar(255) NOT NULL,
-  `list_date` date NOT NULL,
+  `list_date` varchar(255) NOT NULL,
   `user_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
   `image_url` varchar(255) NOT NULL

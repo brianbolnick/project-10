@@ -9,7 +9,7 @@ if ($conn->error) {
     die( "<div class='flash-message' style='position: relative;'>$conn->error</div>"  );
 }
 
-$listings = $_SESSION['listings'];
+$listings = isset($_GET['category']) ? $_SESSION['filteredListings'] : $_SESSION['listings'];
 
 $categories_query = "SELECT * FROM category";
 $categories_result = $conn->query($categories_query);
@@ -31,9 +31,9 @@ $category_count = $categories_result->num_rows;
             <h1 class="home-title" style="letter-spacing: 2px;">LISTINGS</h1>
             <div class="container" style="max-width: 100% !important">
                 <div class="row form-row" >
-                    <form class="form-inline">
+                    <form class="form-inline" method='post' action='../controllers/FilterListings.php'>
                         <div class="form-group mx-sm-3 mb-2 filter-select">
-                            <select class="form-control">
+                            <select class="form-control" name='category_id'>
 <?php
 for ($j = 0; $j < $category_count; $j++) {
     $categories_result->data_seek($j);
