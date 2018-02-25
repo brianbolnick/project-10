@@ -6,10 +6,16 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit7750d26c823693b34ca8734e712fb2d8
 {
+    public static $files = array (
+        '3f8bdd3b35094c73a26f0106e3c0f8b2' => __DIR__ . '/..' . '/sendgrid/sendgrid/lib/SendGrid.php',
+        '9dda55337a76a24e949fbcc5d905a2c7' => __DIR__ . '/..' . '/sendgrid/sendgrid/lib/helpers/mail/Mail.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
             'Symfony\\Component\\EventDispatcher\\' => 34,
+            'SendGrid\\' => 9,
         ),
     );
 
@@ -17,6 +23,10 @@ class ComposerStaticInit7750d26c823693b34ca8734e712fb2d8
         'Symfony\\Component\\EventDispatcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
+        ),
+        'SendGrid\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sendgrid/php-http-client/lib',
         ),
     );
 

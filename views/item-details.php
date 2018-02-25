@@ -12,7 +12,7 @@ if ($conn->error) {
     die("<div class='flash-message' style='position: relative;'>$conn->error</div>");
 }
 
-$joinQuery = "SELECT listings.*, users.first_name, users.institution_id FROM listings, users WHERE listings.user_id = users.user_id AND listings.listing_id=$listing_id;";
+$joinQuery = "SELECT listings.*, users.first_name, users.last_name, users.institution_id, users.email FROM listings, users WHERE listings.user_id = users.user_id AND listings.listing_id=$listing_id;";
 
 $joinResult = $conn->query($joinQuery);
 
@@ -60,7 +60,7 @@ $state = $inst_data['state'];
                 </div>
 
                 <div class="item-footer">
-                    <div><a href="contact-seller.php?seller_id=<?php echo $data['user_id'] ?>">
+                    <div><a href="contact-seller.php?listing_id=<?php echo $listing_id ?>&seller_email=<?php echo $joinData['email'] ?>">
                         <button type="button" class="btn btn-outline-dark contact-seller-button">
                             <i class="fas fa-envelope "></i>
                             <span style="font-size: 1rem; margin-right: 10px;">Contact Seller</span>
@@ -91,7 +91,7 @@ $state = $inst_data['state'];
                 </div>
 
                 <div class="item-footer">
-                    <div><a href="contact-seller.php?seller_id=<?php echo $data['user_id'] ?>">
+                    <div><a href="contact-seller.php?listing_id=<?php echo $listing_id ?>&seller_email=<?php echo $joinData['email'] ?>">
                         <button type="button" class="btn btn-outline-dark contact-seller-button">
                             <i class="fas fa-envelope "></i>
                             <span style="font-size: 1rem; margin-right: 10px;">Contact Seller</span>

@@ -20,19 +20,10 @@
     <script>
         $('#contactModal').modal('hide');
     </script>
-
-
 </head>
 
     <body class='custom-body'>
-        <?php 
-        include "header.php";
-        if (isset($_GET['message'])) {
-            echo '<div class="flash-message">';
-            echo $_GET['message'];
-            echo '</div>';
-        }
-        ?>
+        <?php include "header.php"; ?>
         <form method='post' action='../controllers/Login.php'>
             <div class="svgContainer">
                 <div>

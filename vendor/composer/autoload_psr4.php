@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Symfony\\Component\\EventDispatcher\\' => array($vendorDir . '/symfony/event-dispatcher'),
+    'SendGrid\\' => array($vendorDir . '/sendgrid/php-http-client/lib'),
 );

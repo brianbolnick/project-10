@@ -38,11 +38,6 @@ $state = $inst_data['state'];
     <body>
         <?php 
         include "header.php";
-        if (isset($_GET['message'])) {
-            echo '<div class="flash-message">';
-            echo $_GET['message'];
-            echo '</div>';
-        }
         ?>
         <div class="container profile-container"  >
         <div class="row">
