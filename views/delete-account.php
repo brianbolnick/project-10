@@ -1,5 +1,6 @@
 <?php $active = 'listings';
 require_once  '../utils.db_config.php';
+require_once '../utils/check_session.php';
 
 $conn = new mysqli($hn, $un, $pw, $db);
 if($conn->connect_error) die( "<div class='flash-message' style='position: relative;'>$conn->error</div>"  );

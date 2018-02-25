@@ -2,8 +2,9 @@
 if (isset($_POST['email'])) {
     require_once '../models/model.php';
 
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $email = mysql_entities_fix_string($conn, $_POST['email']);
+    $password = mysql_entities_fix_string($conn, $_POST['password']);
+    
 
     // handle password hashing (NOTE: These should NEVER be stored in the files themselves!)
     $salt1 = 'nlaosd73@#YHS)#@Jsafilj39';
@@ -43,3 +44,15 @@ if (isset($_POST['email'])) {
         exit();
     }
 }
+
+
+function mysql_entities_fix_string($conn, $string){
+	return htmlentities(mysql_fix_string($conn, $string));	
+}
+
+function mysql_fix_string($conn, $string){
+	if(get_magic_quotes_gpc()) $string = stripslashes($string);
+	return $conn->real_escape_string($string);
+}
+
+?>

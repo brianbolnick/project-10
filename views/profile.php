@@ -1,17 +1,17 @@
 <?php $active = 'profile';
 require_once '../utils/db_config.php';
-
+require_once '../utils/check_session.php';
 $message = '';
 session_start();
-if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
-    $message = 'You must be signed in to access that page.';
-    header("Location: ./login.php?message=You must be signed in to access that page.");
-    $first_name = $_SESSION['username'];
-    // $last_name = $_SESSION['last_name'];
-    // $email = $_SESSION['username'];
-    // $phone = $_SESSION['phone'];
-    // $institution_id = $_SESSION['institution_id'];
-}
+// if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
+//     $message = 'You must be signed in to access that page.';
+//     header("Location: ./login.php?message=You must be signed in to access that page.");
+//     $first_name = $_SESSION['username'];
+//     // $last_name = $_SESSION['last_name'];
+//     // $email = $_SESSION['username'];
+//     // $phone = $_SESSION['phone'];
+//     // $institution_id = $_SESSION['institution_id'];
+// }
 
 // $name = (isset($_POST['first_name'])) ? $_POST['first_name'] : "";
 

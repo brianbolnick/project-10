@@ -1,4 +1,7 @@
-<?php $active = 'deleteListing';?>
+<?php 
+$active = 'deleteListing';
+require_once '../utils/check_session.php';
+?>
 <!doctype html>
 <html>
     <?php include "head.php";?>

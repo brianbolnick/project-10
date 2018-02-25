@@ -3,14 +3,14 @@ if (isset($_POST['email'])) {
     require_once '../models/model.php';
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
-    $email = $_POST['email'];
+    $email = mysql_entities_fix_string($conn, $_POST['email']);
     $phone = $_POST['phone'];
     $institution_id = $_POST['institution_id'];
 
     // handle password hashing
     $salt1 = 'nlaosd73@#YHS)#@Jsafilj39';
     $salt2 = 'FASDa9spd^&SD)QMAOS#a02jaoj1amsnq@';
-    $password = $_POST['password'];
+    $password = mysql_entities_fix_string($conn, $_POST['password']);
     $token = hash('ripemd128', "$salt1$password$salt2");
 
     $user = new User($first_name, $last_name, $token, $email, $phone, $institution_id);
@@ -36,3 +36,14 @@ if (isset($_POST['email'])) {
     header("Location: ../views/index.php");
     exit();
 }
+
+function mysql_entities_fix_string($conn, $string){
+	return htmlentities(mysql_fix_string($conn, $string));	
+}
+
+function mysql_fix_string($conn, $string){
+	if(get_magic_quotes_gpc()) $string = stripslashes($string);
+	return $conn->real_escape_string($string);
+}
+
+?>
