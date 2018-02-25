@@ -3,7 +3,12 @@
 <html>
     <?php include "head.php"?>
     <body>
-        <?php include "header.php";?>
+        <?php 
+        include "header.php";
+        if (isset($_ENV['TEST'])){
+            echo $_ENV['TEST'];
+        }
+        ?>
         <div class="container home-container"  >
             <h1 class="home-title">Classifieds for College Students.</h1>
             <a href="../controllers/GetListings.php">
