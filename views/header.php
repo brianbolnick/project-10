@@ -56,7 +56,7 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
                 </div>
                 <div class="form-group">
                     <label for="contactEmail">Email address</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" required name="email">
+                    <input type="email" class="form-control" id="contact-email" placeholder="Enter email" required name="email">
                 </div>
                 <div class="form-group">
                     <label for="contactIssue">Reason for contact</label>
