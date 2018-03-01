@@ -51,6 +51,10 @@ _END;
                         </button>
                            
                         </form>
+						<form class="nav navbar-form navbar-right" method='post' action='../controllers/SearchListings.php'>
+						<input class="form-control" name="search_term">
+						<button class="btn btn-default"><i class="glyphicon glyphicon-search"></i>Search</button>
+						</form>
 <?php 
     if (isset($_GET['category'])) {
 echo <<<_END
