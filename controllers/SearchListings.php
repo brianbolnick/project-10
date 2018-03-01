@@ -5,7 +5,7 @@ require_once '../models/model.php';
 $obj = new ListingsModel();
 
 $searchterm = $_POST['search_term'];
-$listings = $obj->select("title like '%{$searchterm}%' or description like '%{$searchterm}%'");
+$listings = $obj->filter("title like '%{$searchterm}%' or description like '%{$searchterm}%'");
 
 session_start();
 $_SESSION['listings'] = $listings;

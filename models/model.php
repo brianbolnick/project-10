@@ -125,7 +125,7 @@ class ListingsModel
 
     public function select($where)
     {
-        global $listings, $conn;
+        global $conn;
         $query = "Select * from listings where $where ";
 
         $result = $conn->query($query);
@@ -133,17 +133,10 @@ class ListingsModel
             die("<div class='flash-message' style='position: relative;'>$conn->error</div>");
         }
 
-        $rows = $result->num_rows;
-        for ($j = 0; $j < $rows; $j++) {
-            $result->data_seek($j);
-            $row = $result->fetch_assoc();
-
-            $listing = new Listing($row['listing_id'], $row['description'], $row['title'], $row['list_date'], $row['price'], $row['category_id'], $row['user_id'], $row['image_url']);
-            $listings[] = $listing;
-        }
-        return $listings;
+        $data = $result->fetch_assoc(); 
+        return $data; 
     }
-
+	
     public function filter($where)
     {
         // global $conn;
