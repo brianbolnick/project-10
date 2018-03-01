@@ -6,7 +6,7 @@ session_start();
 
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->error) {
-    die( "<div class='flash-message' style='position: relative;'>$conn->error</div>"  );
+    die("<div class='flash-message' style='position: relative;'>$conn->error</div>");
 }
 
 $listings = isset($_GET['category']) ? $_SESSION['filteredListings'] : $_SESSION['listings'];
@@ -14,7 +14,7 @@ $listings = isset($_GET['category']) ? $_SESSION['filteredListings'] : $_SESSION
 $categories_query = "SELECT * FROM category";
 $categories_result = $conn->query($categories_query);
 if (!$categories_result) {
-    die( "<div class='flash-message' style='position: relative;'>$conn->error</div>"  );
+    die("<div class='flash-message' style='position: relative;'>$conn->error</div>");
 }
 
 $categories = $categories_result->fetch_array(MYSQLI_NUM);
@@ -30,7 +30,7 @@ $category_count = $categories_result->num_rows;
         <div class="container listings-container"  >
             <h1 class="home-title" style="letter-spacing: 2px;">LISTINGS</h1>
             <div class="container" style="max-width: 100% !important">
-                <div class="row form-row" >
+                <div class="row form-row" style="justify-content: space-between;">
                     <form class="form-inline" method='post' action='../controllers/FilterListings.php'>
                         <div class="form-group mx-sm-3 mb-2 filter-select">
                             <select class="form-control" name='category_id'>
@@ -49,15 +49,22 @@ _END;
                             <span style="letter-spacing: 2px">FILTER</span>
                             <i class="fas fa-filter"></i>
                         </button>
-                           
-                        </form>
-						<form class="nav navbar-form navbar-right" method='post' action='../controllers/SearchListings.php'>
-						<input class="form-control" name="search_term">
-						<button class="btn btn-default"><i class="glyphicon glyphicon-search"></i>Search</button>
-						</form>
-<?php 
-    if (isset($_GET['category'])) {
-echo <<<_END
+
+                    </form>
+
+                    <form class="form-inline" method='post' action='../controllers/SearchListings.php'>
+                        <div class="form-group mx-sm-3 mb-2 filter-select">
+                            <input class="form-control" name="search_term">
+                        </div>
+                        <button type="submit" class="btn btn-outline-dark mb-2">
+                                <span style="letter-spacing: 2px">SEARCH</span>
+                                <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+
+<?php
+if (isset($_GET['category'])) {
+    echo <<<_END
         <div class='reset-button' style="margin-left: 5px;">
             <a href="../controllers/GetListings.php">
                 <button class="btn btn-outline-dark mb-2">
@@ -66,7 +73,7 @@ echo <<<_END
             </a>
         </div>
 _END;
-    }
+}
 ?>
                 </div>
             </div>
@@ -87,6 +94,4 @@ _END;
             </div>
         </div>
     </body>
-    
-
 </html>
