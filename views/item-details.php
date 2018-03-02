@@ -103,6 +103,10 @@ $state = $inst_data['state'];
                 </div>
             </div>
         </div>
+        <div>
+        <div class="contact-footer">
+            <a href="../controllers/ViewProfile.php?user_id=<?php echo $joinData['user_id'] ?>" class='more-link'>More from this seller</a>
+        </div>
     </body>
 
 </html>
