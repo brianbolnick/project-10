@@ -133,10 +133,10 @@ class ListingsModel
             die("<div class='flash-message' style='position: relative;'>$conn->error</div>");
         }
 
-        $data = $result->fetch_assoc(); 
-        return $data; 
+        $data = $result->fetch_assoc();
+        return $data;
     }
-	
+
     public function filter($where)
     {
         // global $conn;
@@ -170,8 +170,6 @@ class ListingsModel
         }
         return $listings;
     }
-
-    
 
     public function delete($where)
     {
@@ -207,9 +205,23 @@ class UsersModel
         return $data;
     }
 
+    public function update($first_name, $last_name, $password, $email, $phone, $institution_id, $user_id)
+    {
+        global $conn;
+        $query = "UPDATE `users` SET `first_name` = '$first_name', `last_name` = '$last_name', `password` = '$password', `email` = '$email', `phone` = '$phone' WHERE `users`.`user_id` = $user_id";
+
+        $result = $conn->query($query);
+        if (!$result) {
+            die("<div class='flash-message' style='position: relative;'>$conn->error</div>");
+        }
+
+        // $data = $result->fetch_assoc();
+        // return $data;
+    }
 }
 // $obj = new ListingsModel();
 // $temp_id ='6';
 // // $obj->select("`listings`.`category_id` = " . $temp_id);
 // print_r($obj->selectAll());
+
 ?>
