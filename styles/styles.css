@@ -495,6 +495,14 @@ a.more-link {
     font-size: 0.9rem;
 }
 
+div#secret-secret {
+    height: 200px;
+}
+
+div#secret-secret:hover {
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 767px) and (min-width: 320px) {
     .hide-on-mobile {
         display: none !important;
