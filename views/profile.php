@@ -2,7 +2,11 @@
 require_once '../utils/db_config.php';
 require_once '../utils/check_session.php';
 $message = '';
-session_start();
+
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
 
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->error) {
