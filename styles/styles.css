@@ -249,13 +249,19 @@ h1.listing-title {
 }
 
 .flash-message {
-    text-align: center;
     border: solid 1px #F29B6F;
     width: 80%;
     margin: 5px auto -15px auto;
     padding: 10px;
     font-weight: 700;
+    display: flex;
     background: #f29b6f73;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+div#close-message:hover {
+    cursor: pointer;
 }
 
 .profile-card {

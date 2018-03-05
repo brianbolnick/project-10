@@ -87,8 +87,17 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
 </div>
 <?php
 if (isset($_GET['message'])) {
-    echo '<div class="flash-message">';
-    echo $_GET['message'];
-    echo '</div>';
+    // echo '<div class="flash-message">';
+    // echo '<div'
+    // echo $_GET['message'];
+    // echo '</div>';
+    $message = $_GET['message'];
+    echo <<<_END
+    <div class="flash-message">        
+        <div></div>
+        <div class="message">$message</div>
+        <div class="close-message" id='close-message'><i class="fas fa-times"></i></div>
+    </div>
+_END;
 }
 ?>
