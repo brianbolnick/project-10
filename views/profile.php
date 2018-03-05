@@ -95,7 +95,7 @@ for ($j = 0; $j < $rows; $j++) {
             <div class="profile-listing-card-image" style="background: url($img);">
             </div>
             <div class="profile-listing-card-options">
-                <a class='profile-option' href="../controllers/EditListing.php?listing_id=$id">Edit</a>
+                <a class='profile-option' href="./edit-listing.php?listing_id=$id">Edit</a>
                 <a class='profile-option' href="../controllers/DeleteListing.php?listing_id=$id">Delete</a>
             </div>
         </div>  

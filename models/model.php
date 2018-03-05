@@ -139,17 +139,6 @@ class ListingsModel
 
     public function filter($where)
     {
-        // global $conn;
-        // $query = "Select * from listings where $where";
-
-        // $result = $conn->query($query);
-        // if (!$result) {
-        //     die("<div class='flash-message' style='position: relative;'>$conn->error</div>");
-        // }
-
-        // $data = $result->fetch_assoc();
-        // return $data;
-
         global $listings, $conn;
 
         $query = "Select * from listings where $where";
@@ -180,9 +169,17 @@ class ListingsModel
         if (!$result) {
             die("<div class='flash-message' style='position: relative;'>$conn->error</div>");
         }
+    }
 
-        // $data = $result->fetch_assoc();
-        // return $data;
+    public function update($listing_id, $description, $title, $list_date, $price, $category_id, $user_id, $image_url)
+    {
+        global $conn;
+        $query = "UPDATE `listings` SET `description` = '$description', `title` = '$title', `list_date` = '$list_date', `price` = '$price', `user_id` = '$user_id', `category_id` = '$category_id', `image_url` = '$image_url' WHERE `listings`.`listing_id` = $listing_id";
+
+        $result = $conn->query($query);
+        if (!$result) {
+            die("<div class='flash-message' style='position: relative;'>$conn->error</div>");
+        }
     }
 
 }
