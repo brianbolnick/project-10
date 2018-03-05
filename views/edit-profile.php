@@ -68,6 +68,9 @@ _END;
                     </div>
                     <input type="submit" class="btn btn-outline-dark" style="margin-top: 10px;" value="Register">
                 </form>
+                <div class="delete-account">
+                    Hate this thing? <a href="../controllers/DeleteAccount.php">Delete your account instead.</a>
+                </div>
             </div>
         </div>
     </body>

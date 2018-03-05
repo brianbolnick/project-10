@@ -503,6 +503,10 @@ div#secret-secret:hover {
     cursor: pointer;
 }
 
+.delete-account {
+    text-align: center;
+}
+
 @media only screen and (max-width: 767px) and (min-width: 320px) {
     .hide-on-mobile {
         display: none !important;

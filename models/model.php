@@ -205,6 +205,21 @@ class UsersModel
         return $data;
     }
 
+    public function delete($where)
+    {
+        global $conn;
+        $query = "delete from users where $where ";
+        // "DELETE FROM `users` WHERE `users`.`user_id` = 4"?
+
+        $result = $conn->query($query);
+        if (!$result) {
+            die("<div class='flash-message' style='position: relative;'>$conn->error</div>");
+        }
+
+        // $data = $result->fetch_assoc();
+        // return $data;
+    }
+
     public function update($first_name, $last_name, $password, $email, $phone, $institution_id, $user_id)
     {
         global $conn;
