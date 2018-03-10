@@ -6,7 +6,10 @@ $listing_id = $_GET['listing_id'];
 require_once '../models/model.php';
 require_once '../utils/db_config.php';
 require_once '../utils/check_session.php';
-session_start();
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
 
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->error) {
@@ -21,6 +24,12 @@ if (!$categories_result) {
 
 $categories = $categories_result->fetch_array(MYSQLI_NUM);
 $category_count = $categories_result->num_rows;
+
+$list_obj = new ListingsModel();
+$listing = $list_obj->select(" listing_id = '$listing_id'");
+$x_pos = 1 + strrpos($listing['image_url'], "/");
+$img_name = substr($listing['image_url'], $x_pos);
+
 ?>
 <!doctype html>
 <html>
@@ -33,19 +42,19 @@ $category_count = $categories_result->num_rows;
                 <form method='post' action=<?php echo "../controllers/EditListing.php?listing_id=$listing_id" ?> enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="InputTitle">Title</label>
-                        <input type="text" class="form-control" id="InputTitle" placeholder="Title" name='title' required>
+                        <input type="text" class="form-control" id="InputTitle" placeholder="Title" name='title' value="<?php echo htmlspecialchars($listing['title']); ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="inputDescription">Description</label>
-                        <input type="text" class="form-control" id="inputDescription" placeholder="Description" name='description' required>
+                        <input type="text" class="form-control" id="inputDescription" placeholder="Description" name='description' value="<?php echo htmlspecialchars($listing['description']); ?>" required>
                     </div>
 					<div class="form-group">
                         <label for="inputPrice">Price</label>
-                        <input type="text" class="form-control"  id="inputPrice" placeholder="Price" name='price' required>
+                        <input type="text" class="form-control"  id="inputPrice" placeholder="Price" name='price' value="<?php echo htmlspecialchars($listing['price']); ?>" required>
                     </div>
 					<div class="form-group">
                         <label for="inputCategory">Category</label>
-                        <select type="category" class="form-control" id="category" name='category_id' required>
+                        <select type="category" class="form-control" id="category" name='category_id' value="<?php echo htmlspecialchars($listing['category_id']); ?>" required>
 <?php
 for ($j = 0; $j < $category_count; $j++) {
     $categories_result->data_seek($j);
@@ -59,8 +68,8 @@ _END;
 					</div>
                     <label for="image-file">Image</label>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="image-file" name="image" required>
-                        <label class="custom-file-label" for="image"><span id="file-placeholder">Choose File</span></label>
+                        <input type="file" class="custom-file-input" id="image-file" name="image" value="<?php echo htmlspecialchars($listing['image_url']); ?>">
+                        <label class="custom-file-label" for="image"><span id="file-placeholder"><?php echo htmlspecialchars($img_name); ?></span></label>
                     </div>
                     
                     <button type="submit" class="btn btn-outline-dark" style="margin-top: 10px;" name="submit">Edit Listing</button>

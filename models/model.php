@@ -70,8 +70,8 @@ class Listing
         $category_id = $this->category_id;
         $image_url = $this->image_url;
 
-        $query = "insert into listings (listing_id, description, title, list_date, price, category_id, user_id, image_url)
-			values ('$listing_id', '$description', '$title', '$list_date', '$price' , '$category_id', '$user_id', '$image_url') ";
+        $query = "insert into listings ( description, title, list_date, price, category_id, user_id, image_url)
+			values ('$description', '$title', '$list_date', '$price' , '$category_id', '$user_id', '$image_url') ";
         $result = $conn->query($query);
         if (!$result) {
             die(
