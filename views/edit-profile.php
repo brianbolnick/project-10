@@ -1,5 +1,7 @@
 <?php
+
 $active = 'signup';
+$user_id = $_GET['user_id'];
 require_once '../models/model.php';
 require_once '../utils/db_config.php';
 session_start();
@@ -18,6 +20,10 @@ if (!$categories_result) {
 $categories = $categories_result->fetch_array(MYSQLI_NUM);
 $category_count = $categories_result->num_rows;
 
+$user_obj = new ListingsModel();
+$user = $user_obj->select(" user_id = '$user_id'");
+
+
 ?>
 <!doctype html>
 <html>
@@ -31,29 +37,29 @@ $category_count = $categories_result->num_rows;
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="first_name">First Name</label>
-                            <input type="text" class="form-control" name="first_name" placeholder="First Name" required>
+                            <input type="text" class="form-control" name="first_name" placeholder="First Name" value="<?php echo htmlspecialchars($user['first_name']); ?>" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="last_name">Last Name</label>
-                            <input type="text" class="form-control" name="last_name" placeholder="Last Name" required>
+                            <input type="text" class="form-control" name="last_name" placeholder="Last Name" value="<?php echo htmlspecialchars($user['last_name']); ?>" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="text" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Email Address">
+                        <input type="text" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Email Address"value="<?php echo htmlspecialchars($user['email']); ?>">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" name="password" placeholder="Password">
+                        <input type="password" class="form-control" name="password" placeholder="Password"value="<?php echo htmlspecialchars($user['password']); ?>">
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="phone">Phone Number</label>
-                            <input type="text" class="form-control" name="phone" placeholder="Phone Number" required>
+                            <input type="text" class="form-control" name="phone" placeholder="Phone Number" value="<?php echo htmlspecialchars($user['phone']); ?>"required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="institution">Current Institution</label>
-                            <select type="name" class="form-control" name="institution_id" required>
+                            <select type="name" class="form-control" name="institution_id" value="<?php echo htmlspecialchars($user['institution_id']); ?>" required>
 <?php
 for ($j = 0; $j < $category_count; $j++) {
     $categories_result->data_seek($j);
@@ -66,7 +72,7 @@ _END;
                             </select>
                         </div>
                     </div>
-                    <input type="submit" class="btn btn-outline-dark" style="margin-top: 10px;" value="Register">
+                    <input type="submit" class="btn btn-outline-dark" style="margin-top: 10px;" value="Update">
                 </form>
                 <div class="delete-account">
                     Hate this thing? <a href="../controllers/DeleteAccount.php">Delete your account instead.</a>
