@@ -8,7 +8,7 @@ if (isset($_POST['email'])) {
 
     // handle password hashing (NOTE: These should NEVER be stored in the files themselves!)
     $salt1 = isset($_ENV['SALT1']) ? $_ENV['SALT1'] :'nlaosd73@#YHS)#@Jsafilj39';
-    $salt2 = isset($_ENV['SALT@']) ? $_ENV['SALT@'] :'FASDa9spd^&SD)QMAOS#a02jaoj1amsnq@';
+    $salt2 = isset($_ENV['SALT2']) ? $_ENV['SALT2'] :'FASDa9spd^&SD)QMAOS#a02jaoj1amsnq@';
     $token = hash('ripemd128', "$salt1$password$salt2");
 
     //select user from db

@@ -36,7 +36,7 @@ if (isset($_POST['email'])) {
     $user_id = $_SESSION['user_id'];
 
     $salt1 = isset($_ENV['SALT1']) ? $_ENV['SALT1'] :'nlaosd73@#YHS)#@Jsafilj39';
-    $salt2 = isset($_ENV['SALT@']) ? $_ENV['SALT@'] :'FASDa9spd^&SD)QMAOS#a02jaoj1amsnq@';
+    $salt2 = isset($_ENV['SALT2']) ? $_ENV['SALT2'] :'FASDa9spd^&SD)QMAOS#a02jaoj1amsnq@';
     $password = mysql_entities_fix_string($conn, $_POST['password']);
     $token = hash('ripemd128', "$salt1$password$salt2");
 
