@@ -2,22 +2,21 @@
 require_once '../models/model.php';
 require '../vendor/autoload.php';
 
-if (EMPTY($_POST['image'])){
-				$title = $_POST['title'];
-                $description = $_POST['description'];
-                $price = $_POST['price'];
-                $category_id = $_POST['category_id'];
-                $date = date("M n, Y");
-                $listing_id = $_GET['listing_id'];
-				$list_obj = new ListingsModel();
-				$listing = $list_obj->select(" listing_id = '$listing_id'");
-				$image_url = $listing['image_url'];
-			session_start();
-				$list_obj->update($listing_id, addslashes($description), $title, $date, $price, $category_id, $_SESSION['user_id'], $image_url);
-                header("Location: ../views/profile.php?message=Listing updated successfully");
-                exit();
+if (empty($_POST['image'])) {
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+    $price = $_POST['price'];
+    $category_id = $_POST['category_id'];
+    $date = date("M n, Y");
+    $listing_id = $_GET['listing_id'];
+    $list_obj = new ListingsModel();
+    $listing = $list_obj->select(" listing_id = '$listing_id'");
+    $image_url = $listing['image_url'];
+    session_start();
+    $list_obj->update($listing_id, addslashes($description), $title, $date, $price, $category_id, $_SESSION['user_id'], $image_url);
+    header("Location: ../views/profile.php?message=Listing updated successfully");
+    exit();
 }
-	
 
 $target_dir = "../uploads/";
 $target_file = $target_dir . basename($_FILES["image"]["name"]);
@@ -61,7 +60,7 @@ if (isset($_FILES["image"]["name"])) {
         if (file_exists($target_file)) {
             if (!unlink($target_file)) {
                 echo ("Error deleting $target_file");
-            } 
+            }
         }
         // Check file size
         if ($_FILES["image"]["size"] > 5000000) {
@@ -103,4 +102,5 @@ if (isset($_FILES["image"]["name"])) {
         }
     }
 }
+
 ?>
