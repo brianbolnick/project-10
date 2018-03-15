@@ -38,9 +38,15 @@ $category_count = $categories_result->num_rows;
 for ($j = 0; $j < $category_count; $j++) {
     $categories_result->data_seek($j);
     $row = $categories_result->fetch_array(MYSQLI_NUM);
-    echo <<<_END
+    if ($row[0] != $_GET['category']){
+	echo <<<_END
     <option value=$row[0]>$row[1]</option>
 _END;
+	} else {
+	echo <<<_END
+    <option selected="selected" value=$row[0]>$row[1]</option>
+_END;
+	}
 }
 ?>
                             </select>
